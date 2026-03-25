@@ -1,0 +1,19 @@
+@import url(./assets/stylesheets/fonts.css);
+
+:root {
+    --font-stack:
+        system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    --fs-sm: clamp(0.8rem, 0.15vi + 0.77rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.31vi + 0.94rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.55vi + 1.14rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 0.91vi + 1.38rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.43vi + 1.67rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 2.18vi + 2.01rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 3.24vi + 2.4rem, 5rem);
+}
+
+body {
+    font-family: var(--font-stack);
+}
