@@ -76,21 +76,6 @@
         grid-template-rows: 1fr;
     }
 
-    .app-overview-cont .overview-fragment {
-        padding: 1rem;
-    }
-
-    /* .overview-fragment + .overview-fragment {
-        border-top: none;
-        border-left: 1px solid var(--separator-border);
-    } */
-}
-
-@media (min-width: 64rem) {
-    .app-overview-cont .overview-fragment {
-        padding: 1.5rem;
-    }
-
     .app-overview-cont .overview-fragment:nth-child(3n + 1) {
         --background-direction: right;
     }
@@ -101,5 +86,11 @@
 
     .app-overview-cont .overview-fragment:nth-child(3n + 3) {
         --background-direction: left;
+    }
+}
+
+@media (min-width: 64rem) {
+    .app-overview-cont .overview-fragment {
+        padding: 1.5rem;
     }
 }
