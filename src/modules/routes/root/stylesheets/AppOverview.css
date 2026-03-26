@@ -1,21 +1,56 @@
 .app-overview-cont {
     align-self: center;
 
-    margin-top: auto;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: auto;
+    padding: 1rem;
 
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
 }
 
 .app-overview-cont .overview-fragment {
     text-align: center;
-    padding: 0.75rem;
+    padding: 1rem;
+
+    border: 1px solid var(--separator-border);
+    border-radius: 0.5rem;
+
+    --background-direction: top;
+
+    background:
+        linear-gradient(
+            to var(--background-direction),
+            rgba(13, 17, 23, 0) 0%,
+            var(--background-color) 70%
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.035) 0px,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px,
+            transparent 28px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 0px,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px,
+            transparent 28px
+        );
 }
 
-.overview-fragment + .overview-fragment {
-    border-top: 1px solid var(--separator-border);
+.app-overview-cont .overview-fragment:nth-child(3n + 1) {
+    --background-direction: top;
+}
+
+.app-overview-cont .overview-fragment:nth-child(3n + 2) {
+    --background-direction: bottom;
+}
+
+.app-overview-cont .overview-fragment:nth-child(3n + 3) {
+    --background-direction: top;
 }
 
 .app-overview-cont .overview-fragment h2 {
@@ -45,14 +80,26 @@
         padding: 1rem;
     }
 
-    .overview-fragment + .overview-fragment {
+    /* .overview-fragment + .overview-fragment {
         border-top: none;
         border-left: 1px solid var(--separator-border);
-    }
+    } */
 }
 
 @media (min-width: 64rem) {
     .app-overview-cont .overview-fragment {
         padding: 1.5rem;
+    }
+
+    .app-overview-cont .overview-fragment:nth-child(3n + 1) {
+        --background-direction: right;
+    }
+
+    .app-overview-cont .overview-fragment:nth-child(3n + 2) {
+        --background-direction: bottom;
+    }
+
+    .app-overview-cont .overview-fragment:nth-child(3n + 3) {
+        --background-direction: left;
     }
 }
