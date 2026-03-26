@@ -1,8 +1,13 @@
-@import url(./assets/stylesheets/fonts.css);
+@font-face {
+    font-family: Syne;
+    src: url(./assets/fonts/Syne-VariableFont_wght.ttf);
+}
+
+/* ######################### General Styles ######################### */
 
 :root {
     --font-stack:
-        system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        Syne, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
     --fs-sm: clamp(0.8rem, 0.15vi + 0.77rem, 0.89rem);
@@ -12,8 +17,54 @@
     --fs-xl: clamp(1.95rem, 1.43vi + 1.67rem, 2.81rem);
     --fs-xxl: clamp(2.44rem, 2.18vi + 2.01rem, 3.75rem);
     --fs-xxxl: clamp(3.05rem, 3.24vi + 2.4rem, 5rem);
+
+    --huge-heading: clamp(4rem, 12vw, 8rem);
+
+    --light-text: #e8eef5;
+    --dark-text: #03110f;
+
+    --background-color: #0d1117;
+
+    --primary-color: #00c2a8;
+    --secondary-color: #0d2233;
+    --accent-color: #ff6b6b;
+    --muted-color: #4a6078;
+
+    --separator-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
+    color: var(--light-text);
     font-family: var(--font-stack);
+
+    background-color: var(--background-color);
+
+    min-height: 100svh;
 }
+
+#root {
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ghost-button-design {
+    background: transparent;
+    border: 1px solid var(--separator-border);
+    color: var(--light-text);
+    transition: 0.15s;
+}
+
+.primary-button-design {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--dark-text);
+    transition: 0.15s;
+}
+.ghost-button-design:hover,
+.primary-button-design:hover {
+    opacity: 0.8;
+}
+
+/* ######################### General Styles ######################### */
