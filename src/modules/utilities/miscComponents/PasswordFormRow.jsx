@@ -3,12 +3,14 @@ import { PasswordInput } from '@mantine/core';
 export default function PasswordFormRow({
     labelText,
     inputId,
+    max,
     errorText = null,
 }) {
     return (
-        <div className='form-row'>
+        <div className={errorText !== null ? 'form-row has-errors' : 'form-row'}>
             <label htmlFor={inputId}>{labelText}</label>
             <PasswordInput
+                maxLength={max}
                 id={inputId}
                 name={inputId}
                 variant='unstyled'
@@ -21,7 +23,7 @@ export default function PasswordFormRow({
                 }}
                 styles={{
                     input: {
-                        height: 40
+                        height: 38
                     }
                 }}
             />

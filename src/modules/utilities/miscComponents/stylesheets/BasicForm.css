@@ -38,7 +38,7 @@
 }
 
 .basic-form .form-row .text-input-wrapper {
-    height: 40px;
+    height: 38px;
 }
 
 .basic-form .form-row input {
@@ -64,12 +64,25 @@
     height: 2.25rem;
 }
 
+.basic-form .form-row.has-errors input {
+    border-color: var(--error-color);
+}
+
+.basic-form .form-row .password-visibility-toggle {
+    color: var(--muted-color);
+}
+
 .basic-form .form-row:has(input:focus) label {
     color: var(--light-text);
 }
 
 .basic-form .form-row input:focus {
     border-color: var(--primary-color);
+}
+
+.basic-form .form-row .inline-error {
+    font-size: var(--fs-sm);
+    color: var(--error-color);
 }
 
 .basic-form .submit-form-button {
@@ -87,6 +100,16 @@
 
     cursor: pointer;
     transition: 0.15s;
+
+    display: grid;
+    place-items: center;
+
+    min-height: calc(1lh + 0.35rem * 2);
+}
+
+.basic-form .submit-form-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .basic-form .below-form-text {
@@ -107,33 +130,8 @@
     text-decoration: underline;
 }
 
-/*
-
-Form - .card | .basic-form
-
-Heading - .form-heading
-
-Form Row - .form-row
-
-Password Input - .password-input
-
-Visibility Toggle - .password-visibility-toggle
-
-<div class="field error">
-    <label>Name</label>
-    <div class="input-wrap">
-        <input type="text" value="J0hn!!!" />
-    </div>
-    <span class="error-msg">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        Name can only contain letters and spaces.
-    </span>
-</div>
-
-<div class="submit-wrap">
-        <button class="btn-submit">Sign up</button>
-</div>
-
-<p class="switch">Already have an account? <a href="/login">Log in.</a></p>
-
-*/
+@media (min-width: 40rem) {
+    .basic-form {
+        max-width: 24rem;
+    }
+}
