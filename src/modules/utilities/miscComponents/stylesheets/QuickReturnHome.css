@@ -1,0 +1,38 @@
+.return-home-cont {
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.return-home-cont a {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted-color);
+    text-decoration: none;
+    transition: 0.15s;
+}
+
+.return-home-cont a:hover {
+    color: var(--text);
+}
+
+.return-home-cont a svg {
+    width: 14px;
+    height: 14px;
+    color: currentColor;
+}
+
+@media (min-width: 40rem) {
+    .return-home-cont {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .return-home-cont {
+        padding: 1.25rem 1.75rem;
+    }
+}
