@@ -1,0 +1,9 @@
+main {
+    width: 100%;
+    flex-grow: 1;
+
+    margin-top: 6rem;
+
+    display: flex;
+    justify-content: center;
+}

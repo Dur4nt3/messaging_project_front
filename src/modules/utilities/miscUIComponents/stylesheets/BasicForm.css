@@ -1,0 +1,139 @@
+.basic-form {
+    width: 100%;
+    max-width: 17.5rem;
+
+    border: 1px solid var(--separator-border);
+    border-radius: 0.9rem;
+    padding: 1.5rem 1.25rem;
+
+    height: max-content;
+}
+
+.basic-form .form-heading {
+    font-size: var(--fs-lg);
+    font-weight: 800;
+    letter-spacing: -0.025rem;
+    color: var(--light-text);
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+
+.basic-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.basic-form .form-row:last-of-type {
+    margin-bottom: 0;
+}
+
+.basic-form .form-row label {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--muted-color);
+    transition: 0.15s;
+    letter-spacing: 0.01rem;
+}
+
+.basic-form .form-row .text-input-wrapper {
+    height: 40px;
+}
+
+.basic-form .form-row input {
+    width: 100%;
+
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--light-text);
+
+    background: var(--input-background);
+
+    border: 1px solid var(--separator-border);
+    border-radius: 0.5rem;
+
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-inline-start: 0.65rem;
+    padding-inline-end: 0.65rem;
+
+    outline: none;
+    transition: 0.15s;
+
+    height: 2.25rem;
+}
+
+.basic-form .form-row:has(input:focus) label {
+    color: var(--light-text);
+}
+
+.basic-form .form-row input:focus {
+    border-color: var(--primary-color);
+}
+
+.basic-form .submit-form-button {
+    margin-top: 1.5rem;
+
+    width: 100%;
+
+    font-size: var(--fs-base);
+    letter-spacing: 0.01rem;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.35rem;
+
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.basic-form .below-form-text {
+    margin-top: 1.25rem;
+
+    text-align: center;
+    font-size: var(--fs-sm);
+    color: var(--muted-color);
+}
+
+.basic-form .below-form-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.basic-form .below-form-text a:hover {
+    text-decoration: underline;
+}
+
+/*
+
+Form - .card | .basic-form
+
+Heading - .form-heading
+
+Form Row - .form-row
+
+Password Input - .password-input
+
+Visibility Toggle - .password-visibility-toggle
+
+<div class="field error">
+    <label>Name</label>
+    <div class="input-wrap">
+        <input type="text" value="J0hn!!!" />
+    </div>
+    <span class="error-msg">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Name can only contain letters and spaces.
+    </span>
+</div>
+
+<div class="submit-wrap">
+        <button class="btn-submit">Sign up</button>
+</div>
+
+<p class="switch">Already have an account? <a href="/login">Log in.</a></p>
+
+*/

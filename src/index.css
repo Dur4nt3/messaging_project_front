@@ -24,11 +24,13 @@
     --dark-text: #03110f;
 
     --background-color: #0d1117;
+    --input-background: #080d13;
 
     --primary-color: #00c2a8;
     --secondary-color: #0d2233;
     --accent-color: #ff6b6b;
     --muted-color: #4a6078;
+    --error-color: #ff6b6b;
 
     --separator-border: rgba(255, 255, 255, 0.1);
 }
