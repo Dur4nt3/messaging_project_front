@@ -1,0 +1,40 @@
+/*VARIOUS SELECTORS RELEVANT TO THIS COMPONENT CAN BE FOUND AT /src/modules/routes/root/stylesheets/HomeNav.css*/
+
+.chats-navbar .nav-actions .avatar-button,
+.chat-panel-header .header-left .recipient-avatar {
+    width: 2rem;
+    height: 2rem;
+
+    background: var(--secondary-color);
+
+    border: 1px solid var(--primary-very-low-opacity);
+    border-radius: 50%;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--primary-color);
+    
+    cursor: pointer;
+    user-select: none;
+
+    transition: 0.15s;
+}
+
+.chats-navbar .nav-actions .avatar-button:focus,
+.chats-navbar .nav-actions .avatar-button:hover {
+    border: 1px solid var(--primary-color);
+}
+
+@media (min-width: 64rem) {
+    .chats-navbar .nav-actions .avatar-button,
+    .chat-panel-header .header-left .recipient-avatar {
+        font-size: var(--fs-base);
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}

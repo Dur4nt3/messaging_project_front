@@ -3,10 +3,9 @@ import { MoveRight } from 'lucide-react';
 
 import './stylesheets/HomeNav.css';
 
-function AuthenticatedNavAction({ name }) {
+function AuthenticatedNavAction() {
     return (
         <>
-            <p className='user-name'>{name}</p>
             <Link to='/chats' className='nav-chats-link ghost-button-design'>
                 <span>Your Chats</span>
                 <MoveRight strokeWidth={1.5} />
@@ -28,15 +27,15 @@ function UnauthenticatedNavAction() {
     );
 }
 
-export default function HomeNav({ name }) {
+export default function HomeNav({auth}) {
     return (
         <nav className='home-navbar'>
             <span className='site-name'>
                 Quick <span>Talk</span>
             </span>
             <div className='nav-actions'>
-                {name !== null ? (
-                    <AuthenticatedNavAction name={name} />
+                {auth ? (
+                    <AuthenticatedNavAction />
                 ) : (
                     <UnauthenticatedNavAction />
                 )}

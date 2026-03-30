@@ -6,11 +6,11 @@ import AppOverview from './AppOverview';
 import HomeFooter from './HomeFooter';
 
 export default function Root() {
-    const userData = useLoaderData();
+    const tokenExists = useLoaderData();
 
     return (
         <>
-            <HomeNav name={userData?.name || null}/>
+            <HomeNav auth={tokenExists} />
             <HomeHeader />
             <AppOverview />
             <HomeFooter />

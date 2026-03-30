@@ -1,0 +1,50 @@
+/*VARIOUS SELECTORS RELEVANT TO THIS COMPONENT CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsNav.css*/
+
+.chat-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--separator-border);
+}
+
+.chat-panel-header .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.chat-panel-header .header-left span.recipient-avatar {
+    cursor: default;
+}
+
+.chat-panel-header.loading-data .header-left span.recipient-avatar {
+    opacity: 0.7;
+}
+
+.chat-panel-header .header-left .recipient-name {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--light-text);
+    letter-spacing: -0.01em;
+
+    max-width: 16ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 40rem) {
+    .chat-panel-header .header-left .recipient-name {
+        max-width: 35ch;
+    }
+}
+
+/*
+
+<div class="panel-header">
+    <div class="header-left">
+        <div class="chat-avatar" title="View profile">AR</div>
+        <span class="chat-username">alex_r</span>
+    </div>
+*/

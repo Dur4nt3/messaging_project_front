@@ -1,0 +1,24 @@
+.error-notification-root {
+    background-color: var(--popover-background);
+
+    border: 1px solid var(--separator-border);
+    padding: 0.75rem;
+}
+
+.error-notification-root::before {
+    display: none;
+}
+
+.error-notification-title {
+    color: var(--error-color);
+}
+
+.error-notification-description {
+    font-size: var(--fs-sm);
+    color: var(--light-text);
+}
+
+.error-notification-close:hover {
+    color: var(--error-color);
+    background-color: var(--error-extremely-low-opacity);
+}

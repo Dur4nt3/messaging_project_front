@@ -1,0 +1,33 @@
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsFooter.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/FooterActionMenu.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/LogoutPopover.css*/
+
+.chat-menu-dropdown .chat-menu-divider {
+    border-color: var(--separator-border);
+}
+
+.chat-menu-dropdown .chat-menu-item.chat-menu-remove-friend:hover {
+    background-color: var(--error-extremely-low-opacity);
+}
+
+.chat-menu-dropdown .chat-menu-item.chat-menu-remove-friend .chat-menu-item-section,
+.chat-menu-dropdown .chat-menu-item.chat-menu-remove-friend .chat-menu-item-label {
+    color: var(--error-color);
+}
+
+.chat-menu-dropdown .chat-menu-item .loading-indicator {
+    opacity: 0.3;
+    animation: flickerFade 2s ease-in-out infinite;
+}
+
+@keyframes flickerFade {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}

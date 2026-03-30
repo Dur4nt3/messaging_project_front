@@ -1,0 +1,22 @@
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsFooter.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/LogoutPopover.css*/
+
+.footer-menu-item:hover,
+.profile-menu-item:hover,
+.chat-menu-item:hover {
+    background-color: var(--hover-background);
+}
+
+.footer-menu-item-label,
+.profile-menu-item-label,
+.chat-menu-item-label {
+    font-size: var(--fs-sm);
+    color: var(--muted-color-sharper-popover);
+    letter-spacing: 0.025rem;
+}
+
+.footer-menu-item-section,
+.profile-menu-item-section,
+.chat-menu-item-section {
+    color: var(--muted-color-sharper-popover);
+}

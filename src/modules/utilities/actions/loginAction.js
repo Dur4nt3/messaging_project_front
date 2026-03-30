@@ -9,7 +9,6 @@ export default async function loginAction({ request }) {
 
     const response = await fetch(serverUrl, {
         method: 'POST',
-        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
         },

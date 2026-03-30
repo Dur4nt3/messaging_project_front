@@ -1,0 +1,40 @@
+/*SELECTORS RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsFooter.css*/
+
+.footer-popover-dropdown,
+.footer-menu-dropdown,
+.profile-menu-dropdown,
+.chat-menu-dropdown {
+    background: var(--popover-background);
+    border: 1px solid var(--separator-border);
+}
+
+.logout-popover-content > h3 {
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: var(--fs-base);
+}
+
+.logout-popover-content > p {
+    color: var(--muted-color-sharper-popover);
+    font-weight: 400;
+    font-size: var(--fs-sm);
+}
+
+.logout-popover-content > .logout-popover-actions {
+    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.logout-popover-content > .logout-popover-actions button {
+    cursor: pointer;
+    border-radius: 0.35rem;
+    padding: 0.15rem 0;
+}
+
+.logout-popover-content > .logout-popover-actions button.confirm-logout {
+    color: var(--error-color);
+    background-color: var(--error-extremely-low-opacity);
+    border: 1px solid var(--error-very-low-opacity);
+}

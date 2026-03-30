@@ -1,0 +1,33 @@
+.chat-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    position: relative;
+}
+
+.chat-panel:has(.chat-not-selected) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-panel .chat-not-selected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.chat-panel .not-selected-label {
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: var(--light-text);
+}
+
+.chat-panel .not-selected-sub {
+    font-size: var(--fs-sm);
+    font-weight: 400;
+    color: var(--muted-color-sharper);
+}

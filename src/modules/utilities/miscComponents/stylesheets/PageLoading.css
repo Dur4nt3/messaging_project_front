@@ -1,0 +1,22 @@
+.loader-animation-cont p {
+    font-size: var(--fs-lg);
+    font-weight: 800;
+    letter-spacing: -0.02rem;
+    color: var(--light-text);
+
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.loader-animation-cont p span {
+    color: var(--primary-color)
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+}

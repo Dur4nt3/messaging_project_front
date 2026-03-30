@@ -1,4 +1,5 @@
-.home-navbar {
+.home-navbar,
+.chats-navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,14 +7,17 @@
     border-bottom: 1px solid var(--separator-border);
 }
 
-.home-navbar .site-name {
+.home-navbar .site-name,
+.chats-navbar .site-name {
     font-size: var(--fs-base);
     font-weight: 800;
     letter-spacing: -0.02rem;
     color: var(--light-text);
+    text-decoration: none;
 }
 
-.home-navbar .site-name span {
+.home-navbar .site-name span,
+.chats-navbar .site-name span {
     color: var(--primary-color);
 }
 
@@ -26,10 +30,6 @@
 
 .home-navbar .nav-actions:has(.nav-chats-link) {
     display: flex;
-}
-
-.home-navbar .nav-actions .user-name {
-    display: none;
 }
 
 .home-navbar .nav-actions .nav-chats-link {
@@ -58,11 +58,13 @@
 }
 
 @media (min-width: 40rem) {
-    .home-navbar {
+    .home-navbar,
+    .chats-navbar {
         padding: 0.75rem 1.25rem;
     }
 
-    .home-navbar .site-name {
+    .home-navbar .site-name,
+    .chats-navbar .site-name {
         font-size: var(--fs-md);
     }
 
@@ -72,43 +74,15 @@
         gap: 0.5rem;
     }
 
-    .home-navbar .nav-actions .user-name {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        max-width: 18ch;
-        word-wrap: break-word;
-        overflow: hidden;
-        line-clamp: 1;
-        -webkit-line-clamp: 1;
-        text-overflow: ellipsis;
-
-        font-size: var(--fs-base);
-        font-weight: 500;
-        text-transform: capitalize;
-        letter-spacing: 0.015rem;
-
-        padding-right: 0.5rem;
-        border-right: 1px solid var(--separator-border);
-    }
-
     .home-navbar .nav-actions a {
         padding: 0.4rem 0.8rem;
     }
 }
 
-@media (min-width: 40rem) {
-    .home-navbar .nav-actions .user-name {
-        max-width: 24ch;
-    }
-}
-
 @media (min-width: 64rem) {
-    .home-navbar {
+    .home-navbar,
+    .chats-navbar {
         padding: 1rem 1.5rem;
-    }
-
-    .home-navbar .nav-actions .user-name {
-        max-width: 32ch;
     }
 
     .home-navbar .nav-actions a {

@@ -1,0 +1,100 @@
+.load-more-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2.25fr 1fr;
+    align-items: center;
+    gap: 0.25rem;
+
+    margin-bottom: 1rem;
+}
+
+.load-more-wrapper .border-decorator {
+    border-top: 1px solid var(--separator-border);
+}
+
+.load-more-wrapper .load-more-messages {
+    font-size: var(--fs-sm);
+    color: var(--muted-color-sharper);
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.load-more-wrapper .load-more-messages:hover {
+    color: var(--light-text);
+}
+
+.load-more-wrapper .load-more-messages span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load-more-wrapper .load-more-messages span.with-chevron {
+    gap: 0.15rem;
+}
+
+.load-more-wrapper .load-more-messages span:not(.with-chevron) {
+    opacity: 0.3;
+    animation: flickerFade 2s ease-in-out infinite;
+}
+
+.load-more-wrapper .load-more-messages svg {
+    width: 16px;
+    height: 16px;
+}
+
+@keyframes flickerFade {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@media (min-width: 40rem) {
+    .load-more-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .load-more-wrapper {
+        grid-template-columns: 1fr 1.5fr 1fr;
+
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .load-more-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 80rem) {
+    .load-more-wrapper {
+        grid-template-columns: 1fr 0.85fr 1fr;
+
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 96rem) {
+    .load-more-wrapper {
+        grid-template-columns: 1fr 0.65fr 1fr;
+
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,5 +1,11 @@
 import { Loader } from '@mantine/core';
 
-export default function FormLoader({ color }) {
-    return <Loader color={color} size={24} />;
+export default function FormLoader({ color, size = 24 }) {
+    return (
+        <Loader
+            classNames={{ root: 'form-loader-root' }}
+            color={color}
+            size={size}
+        />
+    );
 }

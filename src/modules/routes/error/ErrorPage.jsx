@@ -11,7 +11,7 @@ const errorContent = {
             <div className='error-description-cont'>
                 <p>
                     It seems your session has ended or is invalid. Return home
-                    and start a new game.
+                    and login.
                 </p>
             </div>
         ),
@@ -61,13 +61,12 @@ export default function ErrorPage() {
 
     return (
         <>
-            
             <div className='error-cont'>
                 <h1 className='error-code'>{status}</h1>
                 {errorContent[status].title}
                 {errorContent[status].description}
-                <Link to='/' className='return-home-link'>
-                    Return Home
+                <Link to={error?.status === 401 ? '/login' : '/'} className='return-home-link'>
+                    {error?.status === 401 ? 'Login' : 'Return Home'}
                     <ArrowRight strokeWidth='2' size='18' />
                 </Link>
             </div>

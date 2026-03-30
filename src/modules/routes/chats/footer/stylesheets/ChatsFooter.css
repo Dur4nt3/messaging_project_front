@@ -1,0 +1,55 @@
+.chats-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--separator-border);
+}
+
+.chats-footer button,
+.chat-panel-header .header-right button {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    background: none;
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--muted-color-sharper);
+
+    cursor: pointer;
+    transition: 0.12s;
+}
+
+.chats-footer button svg,
+.chat-panel-header .header-right button svg {
+    width: 15px;
+    height: 15px;
+    color: var(--muted-color-sharper);
+
+    transition: 0.12s;
+}
+
+.chats-footer button:hover,
+.chat-panel-header .header-right button:hover {
+    background: var(--hover-background);
+    color: var(--light-text);
+}
+
+.chats-footer button:hover svg,
+.chat-panel-header .header-right button:hover svg {
+    color: var(--light-text);
+}
+
+.chats-footer .logout-button:hover {
+    background: var(--error-extremely-low-opacity);
+    color: var(--error-color);
+}
+.chats-footer .logout-button:hover svg {
+    color: var(--error-color);
+}

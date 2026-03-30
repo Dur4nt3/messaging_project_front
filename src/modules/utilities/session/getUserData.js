@@ -1,5 +1,6 @@
 import { getToken } from './manageToken';
 
+// NOTE: This can be used to check authentication
 export default async function getUserData() {
     const token = getToken();
 
@@ -14,7 +15,9 @@ export default async function getUserData() {
         headers: {
             Authorization: token,
         },
-    }).catch(() => null);
+    }).catch(() => {
+        throw new Response(null, { status: 502 });
+    });
 
     if (response === null) {
         return null;
