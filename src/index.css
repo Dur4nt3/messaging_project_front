@@ -54,6 +54,11 @@ body {
     flex-direction: column;
 }
 
+#root:has(.error-cont) {
+    display: grid;
+    place-items: center;
+}
+
 .ghost-button-design {
     background: transparent;
     border: 1px solid var(--separator-border);

@@ -12,11 +12,13 @@ export default async function getUserData() {
     const response = await fetch(serverUrl, {
         method: 'GET',
         headers: {
-            'Authorization': token,
+            Authorization: token,
         },
-    }).catch(() => {
-        throw new Response(null, { status: 502 });
-    });
+    }).catch(() => null);
+
+    if (response === null) {
+        return null;
+    }
 
     const results = await response.json();
 
