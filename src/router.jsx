@@ -18,6 +18,7 @@ import chatsLoader from './modules/utilities/loaders/chatsLoader';
 
 import signupAction from './modules/utilities/actions/signupAction';
 import loginAction from './modules/utilities/actions/loginAction';
+import logoutAction from './modules/utilities/actions/logoutAction';
 import deleteChatAction from './modules/utilities/actions/deleteChatAction';
 import sendMessageAction from './modules/utilities/actions/sendMessageAction';
 
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
                 path: '/chats',
                 element: <Chats />,
                 loader: chatsLoader,
+            },
+            {
+                path: '/logout',
+                loader: redirectToChats,
+                action: logoutAction,
             },
             {
                 path: '/delete-chat/:chatId',

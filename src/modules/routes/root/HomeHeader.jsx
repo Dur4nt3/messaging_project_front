@@ -1,6 +1,37 @@
-import { Link } from 'react-router';
+import { Link, useNavigation } from 'react-router';
+
+import FormLoader from '../../utilities/miscComponents/FormLoader';
 
 import './stylesheets/HomeHeader.css';
+
+function LoginButton() {
+    const navigation = useNavigation();
+
+    if (
+        navigation.state === 'loading' &&
+        navigation.location.pathname === '/login'
+    ) {
+        return (
+            <span className='login-link ghost-button-design fake-link'>
+                <FormLoader color='#e8eef5' />
+            </span>
+        );
+    }
+
+    if (navigation.state === 'loading') {
+        return (
+            <span className='login-link ghost-button-design fake-link'>
+                Log in
+            </span>
+        );
+    }
+
+    return (
+        <Link to='/login' className='login-link ghost-button-design'>
+            Log in
+        </Link>
+    );
+}
 
 export default function HomeHeader() {
     return (
@@ -21,9 +52,7 @@ export default function HomeHeader() {
                 >
                     Get Started
                 </Link>
-                <Link to='/login' className='login-link ghost-button-design'>
-                    Log in
-                </Link>
+                <LoginButton />
             </div>
         </header>
     );
