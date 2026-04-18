@@ -16,6 +16,14 @@ const errorContent = {
             </div>
         ),
     },
+    403: {
+        title: <h2 className='error-title'>Forbidden</h2>,
+        description: (
+            <div className='error-description-cont'>
+                <p>It seems you're not permitted to perform this action.</p>
+            </div>
+        ),
+    },
     404: {
         title: <h2 className='error-title'>Page Not Found</h2>,
         description: (
@@ -65,7 +73,10 @@ export default function ErrorPage() {
                 <h1 className='error-code'>{status}</h1>
                 {errorContent[status].title}
                 {errorContent[status].description}
-                <Link to={error?.status === 401 ? '/login' : '/'} className='return-home-link'>
+                <Link
+                    to={error?.status === 401 ? '/login' : '/'}
+                    className='return-home-link'
+                >
                     {error?.status === 401 ? 'Login' : 'Return Home'}
                     <ArrowRight strokeWidth='2' size='18' />
                 </Link>

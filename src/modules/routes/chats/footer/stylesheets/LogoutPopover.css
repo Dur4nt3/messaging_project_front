@@ -30,11 +30,23 @@
 .logout-popover-content > .logout-popover-actions button {
     cursor: pointer;
     border-radius: 0.35rem;
-    padding: 0.15rem 0;
+    padding: 0.25rem 0;
+    min-height: calc(1lh + 0.25rem);
+}
+
+.logout-popover-content > .logout-popover-actions .logout-form > button {
+    width: 100%;
+    display: grid;
+    place-items: center;
 }
 
 .logout-popover-content > .logout-popover-actions button.confirm-logout {
     color: var(--error-color);
     background-color: var(--error-extremely-low-opacity);
     border: 1px solid var(--error-very-low-opacity);
+}
+
+.logout-popover-content > .logout-popover-actions button.confirm-logout:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }

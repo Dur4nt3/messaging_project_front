@@ -9,6 +9,19 @@
     gap: 0.625rem;
 }
 
+.chat-list::-webkit-scrollbar {
+    width: 0.35rem;
+}
+
+.chat-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+    background: var(--muted-color-sharper);
+    border-radius: 2px;
+}
+
 .chat-list:has(.no-chats-title) {
     align-items: center;
     justify-content: center;

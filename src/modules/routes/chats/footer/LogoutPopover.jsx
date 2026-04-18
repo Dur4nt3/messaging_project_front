@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
 import { useFetcher } from 'react-router';
+
 import { Popover } from '@mantine/core';
+
+import FormLoader from '../../../utilities/miscComponents/FormLoader';
 
 import { LogOut } from 'lucide-react';
 
@@ -7,6 +11,12 @@ import './stylesheets/LogoutPopover.css';
 
 export default function LogoutPopover({ opened, setOpened }) {
     const fetcher = useFetcher();
+
+    useEffect(() => {
+        if (fetcher.state === 'idle' && fetcher.data?.success === true) {
+            setOpened(false);
+        }
+    }, [fetcher.state, fetcher.data, setOpened]);
 
     return (
         <Popover
@@ -41,12 +51,23 @@ export default function LogoutPopover({ opened, setOpened }) {
                         >
                             Cancel
                         </button>
-                        <button
-                            className='confirm-logout ghost-button-design'
-                            onClick={() => setOpened(false)}
+                        <fetcher.Form
+                            action='/logout'
+                            method='DELETE'
+                            className='logout-form'
                         >
-                            Logout
-                        </button>
+                            <button
+                                className='confirm-logout ghost-button-design'
+                                type='submit'
+                                disabled={fetcher.state !== 'idle'}
+                            >
+                                {fetcher.state === 'idle' ? (
+                                    'Logout'
+                                ) : (
+                                    <FormLoader size={24} color='#ff6b6b' />
+                                )}
+                            </button>
+                        </fetcher.Form>
                     </div>
                 </div>
             </Popover.Dropdown>
