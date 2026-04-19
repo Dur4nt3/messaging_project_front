@@ -64,6 +64,10 @@ const router = createBrowserRouter([
                 loader: redirectToChats,
                 action: sendMessageAction,
             },
+            {
+                path: '/error',
+                element: <ErrorPage />,
+            },
         ],
     },
 ]);

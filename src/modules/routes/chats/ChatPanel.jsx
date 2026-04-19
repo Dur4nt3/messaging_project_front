@@ -21,7 +21,7 @@ function ChatNotSelected() {
     );
 }
 
-export default function ChatPanel({ data }) {
+export default function ChatPanel({ data, loading }) {
     const [inputHeight, setInputHeight] = useState(0);
 
     const scrollThreshold = 200;
@@ -33,7 +33,7 @@ export default function ChatPanel({ data }) {
         preserveScrollOnChange,
     } = useChatScroll(data?.messages, scrollThreshold);
 
-    if (!data) {
+    if (!data && !loading) {
         return (
             <div className='chat-panel'>
                 <ChatNotSelected />

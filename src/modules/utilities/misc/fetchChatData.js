@@ -11,17 +11,18 @@ export default async function fetchChatData(chatId, from, to) {
         headers: {
             Authorization: token,
         },
-    }).catch(() => {
-        throw new Response(null, { status: 502 });
-    });
+    }).catch(() => false);
+
+    if (!response) {
+        return { success: false, code: 502 };
+    }
 
     const results = await response.json();
 
     if (response.status !== 200) {
-        // "false" indicates an error
-        return false;
+        return { success: false, code: response.status };
     }
-    
+
     return {
         name: results.name,
         messages: results.messages,

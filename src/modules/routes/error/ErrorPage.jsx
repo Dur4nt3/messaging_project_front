@@ -1,4 +1,4 @@
-import { useRouteError, Link } from 'react-router';
+import { useRouteError, Link, useSearchParams } from 'react-router';
 
 import { ArrowRight } from 'lucide-react';
 
@@ -60,8 +60,13 @@ const errorContent = {
 
 export default function ErrorPage() {
     const error = useRouteError();
+    const [searchParams] = useSearchParams();
 
     let status = error?.status || 404;
+
+    if (Number(searchParams.get('code'))) {
+        status = Number(searchParams.get('code'));
+    }
 
     if (errorContent[status] === undefined) {
         status = 404;

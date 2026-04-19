@@ -1,22 +1,29 @@
+import { useNavigate } from 'react-router';
 import { useState, useContext } from 'react';
 import ChatsModal from '../../utilities/context/ChatsModal';
 
 import fetchChatData from '../misc/fetchChatData';
 
 export default function useFetchChatData() {
+    const navigate = useNavigate();
+
     const { setRunningRefresher } = useContext(ChatsModal);
 
     const [fetchingChatData, setFetchingChatData] = useState(false);
     const [currentChatData, setCurrentChatData] = useState(null);
 
     function handleSetChatData(data, from, to) {
+        if (data?.success === false) {
+            return navigate(`/error?code=${data?.code}`);
+        }
+
         setCurrentChatData((prev) => {
             if (prev !== null) {
                 if (from) {
                     return {
                         messages: [...prev.messages, ...data.messages],
                         name: prev.name,
-                        more: data.more
+                        more: data.more,
                     };
                 }
                 if (to) {

@@ -78,7 +78,12 @@ export default function Chats() {
                     highlightedChat={highlightedChat}
                     handleChatHighlight={handleChatHighlight}
                 />
-                {!currentlyMobile ? <ChatPanel data={currentChatData} /> : null}
+                {!currentlyMobile ? (
+                    <ChatPanel
+                        data={currentChatData}
+                        loading={fetchingChatData}
+                    />
+                ) : null}
             </ChatsMain>
             <ChatsFooter />
         </>
