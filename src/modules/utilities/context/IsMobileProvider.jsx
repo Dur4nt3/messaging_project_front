@@ -5,9 +5,9 @@ import IsMobile from './IsMobile';
 export default function IsMobileProvider({ children }) {
     const [currentlyMobile, setMobile] = useState(window.innerWidth < 748);
 
-    function updateMedia() {
+    const updateMedia = () => {
         setMobile(window.innerWidth < 748);
-    }
+    };
 
     useEffect(() => {
         window.addEventListener('resize', updateMedia);

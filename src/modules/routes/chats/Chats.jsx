@@ -48,7 +48,7 @@ export default function Chats() {
         }
     }, [currentlyMobile, currentChatModal.modal, setCurrentChatData]);
 
-    function handleChatHighlight(chatId) {
+    const handleChatHighlight = (chatId) => {
         if (fetchingChatData) {
             return;
         }
@@ -66,7 +66,7 @@ export default function Chats() {
 
         fetchChatDataRunner(chatId);
         setRefresher(() => fetchChatDataRunner);
-    }
+    };
 
     return (
         <>

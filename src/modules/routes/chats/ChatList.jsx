@@ -12,7 +12,7 @@ import './stylesheets/ChatList.css';
 function ChatListItem({ chatRecord, highlighted, handleChatHighlight }) {
     const fetcher = useFetcher();
 
-    function handleChatClick() {
+    const handleChatClick = () => {
         // Don't highlight a chat that is being removed
         if (fetcher.state !== 'idle') {
             return;
@@ -22,7 +22,7 @@ function ChatListItem({ chatRecord, highlighted, handleChatHighlight }) {
             return handleChatHighlight(null);
         }
         return handleChatHighlight(chatRecord.chatId);
-    }
+    };
 
     return (
         <div

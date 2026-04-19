@@ -32,10 +32,10 @@ export default function ChatModal({ data }) {
 
     const [opened, { close }] = useDisclosure(true);
 
-    function handleClose() {
+    const handleClose = () => {
         closeModal();
         close();
-    }
+    };
 
     return (
         <Modal
