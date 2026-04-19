@@ -38,7 +38,12 @@ export default function useFetchChatData() {
         });
     };
 
-    const fetchChatDataRunner = async (chatId, from = null, to = null) => {
+    const fetchChatDataRunner = async (
+        chatId,
+        from = null,
+        to = null,
+        firstMessageId = null
+    ) => {
         if (fetchingChatData) {
             return;
         }
@@ -46,7 +51,7 @@ export default function useFetchChatData() {
         setFetchingChatData(true);
         setRunningRefresher(true);
 
-        const data = await fetchChatData(chatId, from, to);
+        const data = await fetchChatData(chatId, from, to, firstMessageId);
 
         setFetchingChatData(false);
         setRunningRefresher(false);

@@ -1,0 +1,65 @@
+.add-friend-searchbar {
+    display: flex;
+    align-items: stretch;
+
+    gap: 0.35rem;
+
+    margin-top: 1rem;
+}
+
+.add-friend-searchbar input {
+    flex-grow: 1;
+
+    font-size: var(--fs-sm);
+    background: rgba(255, 255, 255, 0.03);
+
+    outline: none;
+    border: 1px solid var(--separator-border);
+    border-radius: 0.35rem;
+
+    padding: 0.15rem 0.25rem;
+
+    transition: 0.15s;
+}
+
+.add-friend-searchbar input:focus {
+    border: 1px solid var(--primary-color);
+}
+
+.add-friend-searchbar button {
+    aspect-ratio: 1 / 1;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid var(--separator-border);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.add-friend-searchbar button:hover {
+    transform: translateY(-0.15rem);
+}
+
+.add-friend-searchbar button:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.add-friend-searchbar button svg {
+    color: var(--muted-color-sharper);
+    width: 16px;
+    height: 16px;
+}
+
+/*
+
+<div class="search-wrap">
+    <div class="search-inner">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Search by username..." />
+    </div>
+</div>
+
+*/

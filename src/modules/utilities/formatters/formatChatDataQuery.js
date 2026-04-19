@@ -1,15 +1,25 @@
-export default function formatChatDataQuery(from, to) {
-    if (!from && !to) {
+export default function formatChatDataQuery(from, to, firstMessageId) {
+    if (!from && !to && !firstMessageId) {
         return '';
     }
 
+    let queryParams = '';
+
     if (from && !to) {
-        return `?from=${from}`;
+        queryParams = `?from=${from}`;
+    } else if (!from && to) {
+        queryParams = `?to=${to}`;
+    } else if (from && to) {
+        queryParams = `?from=${from}&to=${to}`;
     }
 
-    if (!from && to) {
-        return `?to=${to}`;
+    if (firstMessageId) {
+        if (queryParams === '') {
+            queryParams = `?firstMessageId=${firstMessageId}`;
+        } else {
+            queryParams += `&firstMessageId=${firstMessageId}`;
+        }
     }
 
-    return `?from=${from}&to=${to}`;
+    return queryParams;
 }

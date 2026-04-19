@@ -1,5 +1,10 @@
-/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsFooter.css*/
-/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/LogoutPopover.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/footer/stylesheets/ChatsFooter.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/footer/stylesheets/LogoutPopover.css*/
+
+.chats-footer button.misc-actions:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 
 .footer-menu-item:hover,
 .profile-menu-item:hover,

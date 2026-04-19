@@ -1,4 +1,4 @@
-/*VARIOUS SELECTORS RELEVANT TO THIS COMPONENT CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsNav.css*/
+/*VARIOUS SELECTORS RELEVANT TO THIS COMPONENT CAN BE FOUND AT /src/modules/routes/chats/header/stylesheets/ChatsNav.css*/
 
 .chat-panel-header {
     display: flex;
@@ -39,12 +39,3 @@
         max-width: 35ch;
     }
 }
-
-/*
-
-<div class="panel-header">
-    <div class="header-left">
-        <div class="chat-avatar" title="View profile">AR</div>
-        <span class="chat-username">alex_r</span>
-    </div>
-*/

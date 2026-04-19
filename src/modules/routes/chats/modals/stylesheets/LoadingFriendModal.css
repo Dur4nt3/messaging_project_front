@@ -1,0 +1,13 @@
+.loading-friend-modal-cont {
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.loading-friend-modal-cont h2 {
+    font-size: var(--fs-md);
+}

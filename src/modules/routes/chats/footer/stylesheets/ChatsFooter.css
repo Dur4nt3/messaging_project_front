@@ -35,13 +35,13 @@
     transition: 0.12s;
 }
 
-.chats-footer button:hover,
+.chats-footer button:not(:disabled):hover,
 .chat-panel-header .header-right button:hover {
     background: var(--hover-background);
     color: var(--light-text);
 }
 
-.chats-footer button:hover svg,
+.chats-footer button:not(:disabled):hover svg,
 .chat-panel-header .header-right button:hover svg {
     color: var(--light-text);
 }

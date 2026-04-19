@@ -1,3 +1,8 @@
+import { useContext, useEffect } from 'react';
+import ChatsModal from '../../../utilities/context/ChatsModal';
+
+import useFetchFriendData from '../../../utilities/hooks/useFetchFriendData';
+
 import { Menu } from '@mantine/core';
 
 import { Ellipsis, UserPlus, UserPen, User, UserX } from 'lucide-react';
@@ -5,6 +10,32 @@ import { Ellipsis, UserPlus, UserPen, User, UserX } from 'lucide-react';
 import './stylesheets/FooterActionMenu.css';
 
 export default function FooterActionMenu({ opened, setOpened }) {
+    const { currentChatModal, openModal, setRefresher } =
+        useContext(ChatsModal);
+
+    const {
+        fetchFriendDataRunner,
+        fetchingFriendData,
+        currentFriendData,
+        setCurrentFriendData,
+    } = useFetchFriendData();
+
+    // After data is fetched
+    // Provide it to the modal
+    useEffect(() => {
+        if (currentFriendData !== null) {
+            openModal(currentFriendData.type, currentFriendData);
+        }
+    }, [currentFriendData, openModal]);
+
+    // If the modal was closed
+    // Reset the friend data
+    useEffect(() => {
+        if (currentChatModal.modal === null) {
+            setCurrentFriendData(null);
+        }
+    }, [currentChatModal.modal, setCurrentFriendData]);
+
     return (
         <Menu
             trapFocus
@@ -25,12 +56,19 @@ export default function FooterActionMenu({ opened, setOpened }) {
                 <button
                     className='misc-actions'
                     onClick={() => setOpened(true)}
+                    disabled={fetchingFriendData}
                 >
                     <Ellipsis strokeWidth={1.5} />
                 </button>
             </Menu.Target>
             <Menu.Dropdown>
-                <Menu.Item leftSection={<User size={14} />}>
+                <Menu.Item
+                    leftSection={<User size={14} />}
+                    onClick={() => {
+                        openModal('FRIEND_LIST', null);
+                        fetchFriendDataRunner('FRIEND_LIST');
+                    }}
+                >
                     Friend List
                 </Menu.Item>
 
@@ -38,7 +76,13 @@ export default function FooterActionMenu({ opened, setOpened }) {
                     Friend Requests
                 </Menu.Item>
 
-                <Menu.Item leftSection={<UserPlus size={14} />}>
+                <Menu.Item
+                    leftSection={<UserPlus size={14} />}
+                    onClick={() => {
+                        openModal('ADD_FRIEND', null);
+                        setRefresher(() => fetchFriendDataRunner);
+                    }}
+                >
                     Add Friends
                 </Menu.Item>
 

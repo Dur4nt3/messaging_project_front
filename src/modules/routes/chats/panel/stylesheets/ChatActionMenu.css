@@ -1,6 +1,6 @@
-/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/ChatsFooter.css*/
-/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/FooterActionMenu.css*/
-/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/stylesheets/LogoutPopover.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/footer/stylesheets/ChatsFooter.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/footer/stylesheets/FooterActionMenu.css*/
+/*SELECTOR RELATED TO BUTTON STYLING CAN BE FOUND AT /src/modules/routes/chats/footer/stylesheets/LogoutPopover.css*/
 
 .chat-menu-dropdown .chat-menu-divider {
     border-color: var(--separator-border);

@@ -57,6 +57,7 @@ export default function Chats() {
 
         if (chatId === null) {
             setCurrentChatData(null);
+            setRefresher(() => () => null);
             return;
         }
 

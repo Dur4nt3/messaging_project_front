@@ -1,10 +1,16 @@
-import formatChatDataQuery from '../formatters/formatChatDataQuery';
 import { getToken } from '../session/manageToken';
 
-export default async function fetchChatData(chatId, from, to, firstMessageId) {
+export default async function fetchFriendData(type, data) {
     const token = getToken();
 
-    const serverUrl = `${import.meta.env.VITE_API_URL}/chats/${chatId}/messages${formatChatDataQuery(from, to, firstMessageId)}`;
+    const typeMap = {
+        FRIEND_LIST: '',
+        FRIEND_REQUEST: '?status=pending',
+        ADD_FRIEND: `?startsWith=${data}`,
+        DENY_LIST: '?status=denied',
+    };
+
+    const serverUrl = `${import.meta.env.VITE_API_URL}/users/friendships${type ? typeMap[type] : ''}`;
 
     const response = await fetch(serverUrl, {
         method: 'GET',
@@ -24,8 +30,7 @@ export default async function fetchChatData(chatId, from, to, firstMessageId) {
     const results = await response.json();
 
     return {
-        name: results.name,
-        messages: results.messages,
-        more: results.more,
+        type,
+        friendships: results.friendships,
     };
 }

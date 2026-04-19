@@ -1,0 +1,38 @@
+.friend-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.friend-modal-header h2 {
+    font-size: var(--fs-base-plus);
+}
+
+.friend-modal-header button {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+
+    background: none;
+
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+
+    transition: 0.12s;
+}
+
+.friend-modal-header button:hover {
+    background: var(--hover-background);
+}
+
+.friend-modal-header button svg {
+    width: 20px;
+    height: 20px;
+    color: var(--muted-color-sharper);
+}
+
+.friend-modal-header button:hover svg {
+    color: var(--light-text);
+}

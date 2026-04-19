@@ -37,10 +37,11 @@ export default function ChatPanelInput({
             const lastMessageId = messages
                 ? messages[messages.length - 1]?.messageId
                 : null;
+            const firstMessageId = messages ? messages[0]?.messageId : null;
 
             setMessageInput('');
             preserveScrollOnChange();
-            runRefresher(chatId, lastMessageId);
+            runRefresher(chatId, lastMessageId, null, firstMessageId);
         } else if (fetcher.state === 'idle' && fetcher.data?.errors) {
             notifications.clean();
             notifications.show(
