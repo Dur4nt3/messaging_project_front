@@ -21,9 +21,13 @@ function FriendListModalContent({ data }) {
         return <EmptyFriendModal item='Friend List' />;
     }
     
-    return data?.friendships.map((record) => (
-        <FriendItem key={record.friendshipId} userData={record.user} />
-    ));
+    return (
+        <div className='friend-list-cont'>
+            {data?.friendships.map((record) => (
+                <FriendItem key={record.friendshipId} userData={record} />
+            ))}
+        </div>
+    );
 }
 
 export default function FriendListModal({ data }) {

@@ -1,0 +1,215 @@
+/* ################################ GENERAL STYLES ################################ */
+
+.friend-item-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 0.5rem;
+    padding: 0.35rem;
+
+    transition: 0.2s;
+}
+
+.friend-item-cont:hover {
+    background-color: var(--hover-background);
+}
+
+/* ################################ GENERAL STYLES ################################ */
+
+/* ################################ USER DATA STYLES ################################ */
+
+.friend-item-cont .friend-item-user-data {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.friend-item-cont .friend-item-user-data .user-avatar {
+    height: 2rem;
+    aspect-ratio: 1 / 1;
+
+    background: var(--secondary-color);
+
+    border: 1px solid var(--primary-very-low-opacity);
+    border-radius: 50%;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--primary-color);
+
+    user-select: none;
+
+    transition: 0.15s;
+}
+
+.friend-item-cont .friend-item-user-data .user-info {
+    flex: 1;
+    cursor: default;
+}
+
+.friend-item-cont .friend-item-user-data .user-info .user-username {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--light-text);
+    letter-spacing: -0.01rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.friend-item-cont .friend-item-user-data .user-info .user-username:has(svg) {
+    display: flex;
+    gap: 0.05rem;
+    align-items: center;
+}
+
+.friend-item-cont .friend-item-user-data .user-info .user-username svg {
+    height: 18px;
+    aspect-ratio: 1 / 1;
+}
+
+.friend-item-cont .friend-item-user-data .user-info .user-name {
+    font-size: var(--fs-sm);
+    font-weight: 400;
+    color: var(--muted-color-sharper-popover);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ################################ USER DATA STYLES ################################ */
+
+/* ################################ ACTIONS STYLES ################################ */
+
+.friend-item-cont .friend-item-actions .reply-to-request-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.friend-item-cont .friend-item-actions button,
+.friend-item-cont .friend-item-actions div {
+    min-height: calc(1lh + 0.15rem * 2);
+
+    border: 1px solid var(--separator-border);
+    border-radius: 0.35rem;
+    outline: none;
+    padding: 0.25rem;
+
+    background-color: transparent;
+
+    transition: 0.2s;
+}
+
+.friend-item-cont .friend-item-actions button {
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+}
+
+.friend-item-cont .friend-item-actions button.reply-to-request.accept {
+    border: 1px solid var(--primary-very-low-opacity);
+}
+
+.friend-item-cont .friend-item-actions button.reply-to-request.deny {
+    border: 1px solid var(--error-very-low-opacity);
+}
+
+.friend-item-cont .friend-item-actions button.reply-to-request.delete {
+    border: 1px solid var(--pending-very-low-opacity);
+}
+
+.friend-item-cont .friend-item-actions button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.friend-item-cont .friend-item-actions .reply-to-request.accept svg,
+.friend-item-cont
+    .friend-item-actions
+    .send-friend-request:not(:disabled):hover
+    svg,
+.friend-item-cont .friend-item-actions .already-friends svg {
+    color: var(--primary-color);
+}
+
+.friend-item-cont .friend-item-actions .reply-to-request.deny svg,
+.friend-item-cont .friend-item-actions .request-denied svg {
+    color: var(--error-color);
+}
+
+.friend-item-cont .friend-item-actions .reply-to-request.delete svg,
+.friend-item-cont .friend-item-actions .request-pending svg {
+    color: var(--pending-color);
+}
+
+.friend-item-cont .friend-item-actions svg {
+    width: 18px;
+    height: 18px;
+}
+
+.friend-item-cont
+    .friend-item-actions
+    .send-friend-request:not(:disabled):hover,
+.friend-item-cont .friend-item-actions .already-friends,
+.friend-item-cont
+    .friend-item-actions
+    .reply-to-request.accept:not(:disabled):hover {
+    border: 1px solid var(--primary-very-low-opacity);
+    background-color: var(--primary-extremely-low-opacity);
+}
+
+.friend-item-cont .friend-item-actions .request-pending,
+.friend-item-cont
+    .friend-item-actions
+    .reply-to-request.delete:not(:disabled):hover {
+    border: 1px solid var(--pending-very-low-opacity);
+    background-color: var(--pending-extremely-low-opacity);
+}
+
+.friend-item-cont .friend-item-actions .request-denied,
+.friend-item-cont
+    .friend-item-actions
+    .reply-to-request.deny:not(:disabled):hover {
+    border: 1px solid var(--error-very-low-opacity);
+    background-color: var(--error-extremely-low-opacity);
+}
+
+.friend-item-cont .friend-item-actions .error {
+    cursor: not-allowed;
+}
+
+.friend-item-cont .friend-item-actions .form-loader-root {
+    height: 18px;
+    width: 18px;
+}
+
+.friend-item-cont .friend-item-actions .form-loader-root > span {
+    background-color: var(--light-text);
+}
+
+.friend-item-cont .friend-item-actions .pending-indicator {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--muted-color-sharper-popover);
+    
+    background: var(--received-border);
+
+    border: 1px solid var(--separator-border);
+    padding: 0.05rem 0.175rem;
+    border-radius: 1rem;
+
+    user-select: none;
+    cursor: default;
+}
+
+/* ################################ ACTION STYLES ################################ */

@@ -19,8 +19,13 @@ import chatsLoader from './modules/utilities/loaders/chatsLoader';
 import signupAction from './modules/utilities/actions/signupAction';
 import loginAction from './modules/utilities/actions/loginAction';
 import logoutAction from './modules/utilities/actions/logoutAction';
+
 import deleteChatAction from './modules/utilities/actions/deleteChatAction';
+
 import sendMessageAction from './modules/utilities/actions/sendMessageAction';
+
+import addFriendAction from './modules/utilities/actions/addFriendAction';
+import handleFriendRequestAction from './modules/utilities/actions/handleFriendRequestAction';
 
 const router = createBrowserRouter([
     {
@@ -63,6 +68,16 @@ const router = createBrowserRouter([
                 path: '/send-message/:chatId',
                 loader: redirectToChats,
                 action: sendMessageAction,
+            },
+            {
+                path: '/send-friend-request/:userId',
+                loader: redirectToChats,
+                action: addFriendAction,
+            },
+            {
+                path: '/handle-friend-request/:userId',
+                loader: redirectToChats,
+                action: handleFriendRequestAction,
             },
             {
                 path: '/error',

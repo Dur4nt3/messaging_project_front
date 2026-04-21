@@ -39,6 +39,11 @@
     transition: 0.2s;
 }
 
+.add-friend-searchbar button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
 .add-friend-searchbar button:hover {
     transform: translateY(-0.15rem);
 }

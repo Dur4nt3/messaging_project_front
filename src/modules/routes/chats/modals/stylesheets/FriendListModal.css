@@ -1,10 +1,24 @@
 .friend-list-modal-body,
-.add-friend-modal-body {
+.add-friend-modal-body,
+.friend-requests-modal-body {
     padding: 0.75rem;
 }
 
 .friend-list-modal-content,
-.add-friend-modal-content {
+.add-friend-modal-content,
+.friend-requests-modal-content {
     border: 1px solid var(--separator-border);
     background-color: var(--background-color);
+}
+
+.matching-user-list,
+.friend-list-cont,
+.friend-requests-split-panel .split-panel-content {
+    margin-top: 1rem;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

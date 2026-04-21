@@ -1,0 +1,4 @@
+.bot-account-tooltip {
+    background-color: var(--popover-background);
+    color: var(--light-text);
+}

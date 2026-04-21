@@ -1,7 +1,8 @@
 /*RELEVANT SELECTORS CAN BE FOUND AT /src/modules/routes/chats/modals/stylesheets/FriendListModal.css*/
 
 .start-search-notice,
-.not-found-notice {
+.not-found-notice,
+.loading-search-notice {
     margin-top: 2rem;
     margin-bottom: 2rem;
 
@@ -11,12 +12,44 @@
 }
 
 .start-search-notice h2,
-.not-found-notice h2 {
+.not-found-notice h2,
+.loading-search-notice h2 {
     font-size: var(--fs-md);
+}
+
+.loading-search-notice h2 {
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
 }
 
 .start-search-notice p,
 .not-found-notice p {
     font-size: var(--fs-sm);
     color: var(--muted-color-sharper);
+}
+
+.matching-user-list::-webkit-scrollbar,
+.friend-requests-split-panel .split-panel-content::-webkit-scrollbar {
+    width: 0.35rem;
+}
+
+.matching-user-list::-webkit-scrollbar-track,
+.friend-requests-split-panel .split-panel-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.matching-user-list::-webkit-scrollbar-thumb,
+.friend-requests-split-panel .split-panel-content::-webkit-scrollbar-thumb {
+    background: var(--muted-color-sharper);
+    border-radius: 2px;
 }

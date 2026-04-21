@@ -8,7 +8,7 @@ import { Search } from 'lucide-react';
 import './stylesheets/SearchForUser.css';
 
 export default function SearchForUser() {
-    const { runRefresher } = useContext(ChatsModal);
+    const { runRefresher, runningRefresher } = useContext(ChatsModal);
     const [searchValue, setSearchValue] = useState('');
 
     const handleSearch = () => runRefresher('ADD_FRIEND', searchValue);
@@ -20,8 +20,17 @@ export default function SearchForUser() {
                 value={searchValue}
                 placeholder='Search by username'
                 onChange={(event) => setSearchValue(event.target.value)}
+                onKeyUp={(event) => {
+                    if (event.key === 'Enter' && !runningRefresher) {
+                        handleSearch();
+                    }
+                }}
             />
-            <button onClick={handleSearch} aria-label='Search for users'>
+            <button
+                onClick={handleSearch}
+                aria-label='Search for users'
+                disabled={runningRefresher}
+            >
                 <Search strokeWidth={1.5} />
             </button>
         </div>

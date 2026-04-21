@@ -10,6 +10,7 @@
         Syne, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
+    --fs-xs: clamp(0.6rem, 0.11vi + 0.58rem, 0.67rem);
     --fs-sm: clamp(0.8rem, 0.15vi + 0.77rem, 0.89rem);
     --fs-sm-plus: clamp(0.9rem, 0.23vi + 0.855rem, 1.04rem);
     --fs-base: clamp(1rem, 0.31vi + 0.94rem, 1.19rem);
@@ -41,14 +42,20 @@
     --muted-color-sharper-popover: #6c85a3;
 
     --error-color: #ff6b6b;
+    --pending-color: #f5a524;
 
     --sent-color: rgba(0, 194, 168, 0.12);
     --received-color: #0d1e2e;
-    
+
     --primary-half-opacity: rgba(0, 194, 168, 0.5);
     --primary-very-low-opacity: rgba(0, 194, 168, 0.25);
     --primary-extremely-low-opacity: rgba(0, 194, 168, 0.1);
 
+    --pending-half-opacity: rgba(245, 165, 36, 0.5);
+    --pending-very-low-opacity: rgba(245, 165, 36, 0.25);
+    --pending-extremely-low-opacity: rgba(245, 165, 36, 0.1);
+
+    --error-half-opacity: rgba(255, 107, 107, 0.5);
     --error-very-low-opacity: rgba(255, 107, 107, 0.25);
     --error-extremely-low-opacity: rgba(255, 107, 107, 0.1);
 

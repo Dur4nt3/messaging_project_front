@@ -72,7 +72,14 @@ export default function FooterActionMenu({ opened, setOpened }) {
                     Friend List
                 </Menu.Item>
 
-                <Menu.Item leftSection={<UserPen size={14} />}>
+                <Menu.Item
+                    leftSection={<UserPen size={14} />}
+                    onClick={() => {
+                        openModal('FRIEND_REQUEST', null);
+                        fetchFriendDataRunner('FRIEND_REQUEST');
+                        setRefresher(() => fetchFriendDataRunner);
+                    }}
+                >
                     Friend Requests
                 </Menu.Item>
 

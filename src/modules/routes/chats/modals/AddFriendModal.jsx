@@ -6,11 +6,21 @@ import { Modal } from '@mantine/core';
 
 import FriendModalHeader from './FriendModalHeader';
 import SearchForUser from './SearchForUser';
+import FriendItem from './FriendItem';
 
 import './stylesheets/AddFriendModal.css';
 
 function AddFriendModalContent({ data }) {
-    console.log(data);
+    const { runningRefresher } = useContext(ChatsModal);
+
+    if (runningRefresher) {
+        return (
+            <div className='loading-search-notice'>
+                <h2>Searching</h2>
+            </div>
+        );
+    }
+
     if (!data) {
         return (
             <div className='start-search-notice'>
@@ -32,7 +42,17 @@ function AddFriendModalContent({ data }) {
         );
     }
 
-    return <h2>Show users!</h2>;
+    return (
+        <div className='matching-user-list'>
+            {data.friendships.map((user) => (
+                <FriendItem
+                    key={user.userId}
+                    userData={user}
+                    variant={'ADD_FRIEND'}
+                />
+            ))}
+        </div>
+    );
 }
 
 export default function AddFriendModal({ data }) {
