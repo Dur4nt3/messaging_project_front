@@ -92,7 +92,7 @@ export default function FriendRequestsAction({ data }) {
     return (
         <fetcher.Form
             action={`/handle-friend-request/${data.sent ? data.receiverId : data.senderId}`}
-            method='POST'
+            method='PATCH'
             className='reply-to-request-form'
         >
             <ActionInner

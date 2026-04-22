@@ -138,6 +138,10 @@
     .friend-item-actions
     .send-friend-request:not(:disabled):hover
     svg,
+.friend-item-cont
+    .friend-item-actions
+    .send-friend-request:not(:disabled):focus
+    svg,
 .friend-item-cont .friend-item-actions .already-friends svg {
     color: var(--primary-color);
 }
@@ -160,10 +164,16 @@
 .friend-item-cont
     .friend-item-actions
     .send-friend-request:not(:disabled):hover,
+.friend-item-cont
+    .friend-item-actions
+    .send-friend-request:not(:disabled):focus,
 .friend-item-cont .friend-item-actions .already-friends,
 .friend-item-cont
     .friend-item-actions
-    .reply-to-request.accept:not(:disabled):hover {
+    .reply-to-request.accept:not(:disabled):hover,
+.friend-item-cont
+    .friend-item-actions
+    .reply-to-request.accept:not(:disabled):focus {
     border: 1px solid var(--primary-very-low-opacity);
     background-color: var(--primary-extremely-low-opacity);
 }
@@ -171,7 +181,10 @@
 .friend-item-cont .friend-item-actions .request-pending,
 .friend-item-cont
     .friend-item-actions
-    .reply-to-request.delete:not(:disabled):hover {
+    .reply-to-request.delete:not(:disabled):hover,
+.friend-item-cont
+    .friend-item-actions
+    .reply-to-request.delete:not(:disabled):focus {
     border: 1px solid var(--pending-very-low-opacity);
     background-color: var(--pending-extremely-low-opacity);
 }
@@ -179,7 +192,10 @@
 .friend-item-cont .friend-item-actions .request-denied,
 .friend-item-cont
     .friend-item-actions
-    .reply-to-request.deny:not(:disabled):hover {
+    .reply-to-request.deny:not(:disabled):hover,
+.friend-item-cont
+    .friend-item-actions
+    .reply-to-request.deny:not(:disabled):focus {
     border: 1px solid var(--error-very-low-opacity);
     background-color: var(--error-extremely-low-opacity);
 }
@@ -201,7 +217,7 @@
     font-size: var(--fs-xs);
     font-weight: 600;
     color: var(--muted-color-sharper-popover);
-    
+
     background: var(--received-border);
 
     border: 1px solid var(--separator-border);

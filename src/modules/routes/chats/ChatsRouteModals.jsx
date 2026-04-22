@@ -5,6 +5,7 @@ import ChatModal from './modals/ChatModal';
 import FriendListModal from './modals/FriendListModal';
 import AddFriendModal from './modals/AddFriendModal';
 import FriendRequestsModal from './modals/FriendRequestsModal';
+import DenyListModal from './modals/DenyListModal';
 
 const MODALS = {
     CHAT_WINDOW: ChatModal,
@@ -12,7 +13,7 @@ const MODALS = {
     FRIEND_LIST: FriendListModal,
     FRIEND_REQUEST: FriendRequestsModal,
     ADD_FRIEND: AddFriendModal,
-    DENY_LIST: <h1>WIP</h1>,
+    DENY_LIST: DenyListModal,
 };
 
 export default function ChatsRouteModals() {

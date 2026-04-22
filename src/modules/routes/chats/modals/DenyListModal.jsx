@@ -5,38 +5,28 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 
 import FriendModalHeader from './FriendModalHeader';
-import SearchForUser from './SearchForUser';
 import FriendItem from './FriendItem';
 
 import './stylesheets/AddFriendModal.css';
 
-function AddFriendModalContent({ data }) {
+function DenyListModalContent({ data }) {
     const { runningRefresher } = useContext(ChatsModal);
 
     if (runningRefresher) {
         return (
             <div className='loading-search-notice'>
-                <h2>Searching</h2>
+                <h2>Loading</h2>
             </div>
         );
     }
 
-    if (!data) {
-        return (
-            <div className='start-search-notice'>
-                <h2>Find Friends</h2>
-                <p>Search by username above and add new friends.</p>
-            </div>
-        );
-    }
-
-    if (data?.friendships?.length === 0) {
+    if (!data || data?.friendships?.length === 0) {
         return (
             <div className='not-found-notice'>
-                <h2>No Matches Found</h2>
+                <h2>No Users Denied</h2>
                 <p>
-                    We couldn't find any users with that name. Try again with a
-                    different term.
+                    You haven't denied any users yet. If you do, they will
+                    appear here.
                 </p>
             </div>
         );
@@ -48,14 +38,14 @@ function AddFriendModalContent({ data }) {
                 <FriendItem
                     key={user.userId}
                     userData={user}
-                    variant={'ADD_FRIEND'}
+                    variant={'DENY_LIST'}
                 />
             ))}
         </div>
     );
 }
 
-export default function AddFriendModal({ data }) {
+export default function DenyListModal({ data }) {
     const { closeModal } = useContext(ChatsModal);
 
     const [opened, { close }] = useDisclosure(true);
@@ -73,19 +63,18 @@ export default function AddFriendModal({ data }) {
             withCloseButton={false}
             closeOnEscape={true}
             classNames={{
-                root: 'add-friend-modal-root',
-                inner: 'add-friend-modal-inner',
-                content: 'add-friend-modal-content',
-                header: 'add-friend-modal-header',
-                overlay: 'add-friend-modal-overlay',
-                title: 'add-friend-modal-title',
-                body: 'add-friend-modal-body',
-                close: 'add-friend-modal-close',
+                root: 'deny-list-modal-root',
+                inner: 'deny-list-modal-inner',
+                content: 'deny-list-modal-content',
+                header: 'deny-list-modal-header',
+                overlay: 'deny-list-modal-overlay',
+                title: 'deny-list-modal-title',
+                body: 'deny-list-modal-body',
+                close: 'deny-list-modal-close',
             }}
         >
-            <FriendModalHeader title='Add Friends' onClose={handleClose} />
-            <SearchForUser />
-            <AddFriendModalContent data={data} />
+            <FriendModalHeader title='Denied Users' onClose={handleClose} />
+            <DenyListModalContent data={data} />
         </Modal>
     );
 }

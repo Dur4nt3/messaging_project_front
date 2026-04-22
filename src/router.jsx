@@ -26,6 +26,7 @@ import sendMessageAction from './modules/utilities/actions/sendMessageAction';
 
 import addFriendAction from './modules/utilities/actions/addFriendAction';
 import handleFriendRequestAction from './modules/utilities/actions/handleFriendRequestAction';
+import removeFromDenyAction from './modules/utilities/actions/removeFromDenyAction';
 
 const router = createBrowserRouter([
     {
@@ -78,6 +79,11 @@ const router = createBrowserRouter([
                 path: '/handle-friend-request/:userId',
                 loader: redirectToChats,
                 action: handleFriendRequestAction,
+            },
+            {
+                path: '/remove-from-deny/:userId',
+                loader: redirectToChats,
+                action: removeFromDenyAction,
             },
             {
                 path: '/error',

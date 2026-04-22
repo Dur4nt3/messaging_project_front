@@ -67,6 +67,7 @@ export default function FooterActionMenu({ opened, setOpened }) {
                     onClick={() => {
                         openModal('FRIEND_LIST', null);
                         fetchFriendDataRunner('FRIEND_LIST');
+                        setRefresher(() => fetchFriendDataRunner);
                     }}
                 >
                     Friend List
@@ -93,7 +94,14 @@ export default function FooterActionMenu({ opened, setOpened }) {
                     Add Friends
                 </Menu.Item>
 
-                <Menu.Item leftSection={<UserX size={14} />}>
+                <Menu.Item
+                    leftSection={<UserX size={14} />}
+                    onClick={() => {
+                        openModal('DENY_LIST', null);
+                        fetchFriendDataRunner('DENY_LIST');
+                        setRefresher(() => fetchFriendDataRunner);
+                    }}
+                >
                     Denied Users
                 </Menu.Item>
             </Menu.Dropdown>

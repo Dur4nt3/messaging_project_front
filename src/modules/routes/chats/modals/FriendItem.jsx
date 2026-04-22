@@ -1,5 +1,6 @@
 import AddFriendAction from './AddFriendAction';
 import FriendRequestsAction from './FriendRequestsAction';
+import DenyListAction from './DenyListAction';
 
 import getUserInitials from '../../../utilities/formatters/getUserInitials';
 
@@ -10,15 +11,20 @@ import './stylesheets/FriendItem.css';
 function FriendItemActions({ variant, data = null }) {
     const variantMap = {
         FRIEND_LIST: null,
-        FRIEND_REQUEST: () => <FriendRequestsAction data={data} />,
-        ADD_FRIEND: () => <AddFriendAction data={data} />,
-        DENY_LIST: null,
+        FRIEND_REQUEST: FriendRequestsAction,
+        ADD_FRIEND: AddFriendAction,
+        DENY_LIST: DenyListAction,
     };
 
-    return (
-        <div className='friend-item-actions'>{variantMap[variant]?.()}</div> ??
-        null
-    );
+    const ActionComponent = variantMap[variant];
+
+    if (!ActionComponent) {
+        return null;
+    }
+
+    return <div className='friend-item-actions'>
+        <ActionComponent data={data} />
+    </div>
 }
 
 function FriendItemUserData({ userData }) {

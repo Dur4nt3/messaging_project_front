@@ -4,6 +4,25 @@ import FriendItem from './FriendItem';
 
 import './stylesheets/FriendRequestsSplitPanel.css';
 
+function SplitPanelContent({ requests, direction }) {
+    if (requests.length === 0) {
+        return (
+            <div className='not-found-notice'>
+                <h2>No Pending Requests</h2>
+                <p>You haven't {direction} any friend requests.</p>
+            </div>
+        );
+    }
+
+    return requests.map((request) => (
+        <FriendItem
+            key={request.friendshipId}
+            userData={request}
+            variant='FRIEND_REQUEST'
+        />
+    ));
+}
+
 export default function FriendRequestsSplitPanel({ data }) {
     const [activePanel, setActivePanel] = useState('received');
 
@@ -59,21 +78,17 @@ export default function FriendRequestsSplitPanel({ data }) {
                 </button>
             </div>
             <div className='split-panel-content'>
-                {activePanel === 'received'
-                    ? receivedRequests.map((request) => (
-                          <FriendItem
-                              key={request.friendshipId}
-                              userData={request}
-                              variant='FRIEND_REQUEST'
-                          />
-                      ))
-                    : sentRequests.map((request) => (
-                          <FriendItem
-                              key={request.friendshipId}
-                              userData={request}
-                              variant='FRIEND_REQUEST'
-                          />
-                      ))}
+                {activePanel === 'received' ? (
+                    <SplitPanelContent
+                        requests={receivedRequests}
+                        direction='received'
+                    />
+                ) : (
+                    <SplitPanelContent
+                        requests={sentRequests}
+                        direction='sent'
+                    />
+                )}
             </div>
         </div>
     );

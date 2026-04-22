@@ -1,12 +1,14 @@
 .friend-list-modal-body,
 .add-friend-modal-body,
-.friend-requests-modal-body {
+.friend-requests-modal-body,
+.deny-list-modal-body {
     padding: 0.75rem;
 }
 
 .friend-list-modal-content,
 .add-friend-modal-content,
-.friend-requests-modal-content {
+.friend-requests-modal-content,
+.deny-list-modal-content {
     border: 1px solid var(--separator-border);
     background-color: var(--background-color);
 }
