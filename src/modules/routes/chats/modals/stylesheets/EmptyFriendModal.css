@@ -1,0 +1,20 @@
+.empty-friend-modal-cont {
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    text-align: center;
+}
+
+.empty-friend-modal-cont h2 {
+    font-size: var(--fs-md);
+}
+
+.empty-friend-modal-cont p {
+    font-size: var(--fs-sm-plus);
+    color: var(--muted-color-sharper);
+}

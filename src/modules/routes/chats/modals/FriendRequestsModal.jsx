@@ -5,6 +5,8 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 
 import FriendModalHeader from './FriendModalHeader';
+import LoadingFriendModal from './LoadingFriendModal';
+import EmptyFriendModal from './EmptyFriendModal';
 import FriendRequestsSplitPanel from './FriendRequestsSplitPanel';
 
 import './stylesheets/AddFriendModal.css';
@@ -13,23 +15,17 @@ function FriendRequestsModalContent({ data }) {
     const { runningRefresher } = useContext(ChatsModal);
 
     if (runningRefresher) {
-        return (
-            <div className='loading-search-notice'>
-                <h2>Loading</h2>
-            </div>
-        );
+        return <LoadingFriendModal text='Loading' />;
     }
 
     if (!data || data?.friendships?.length === 0) {
-        return (
-            <div className='not-found-notice'>
-                <h2>No Pending Requests</h2>
-                <p>You haven't sent or received any friend requests.</p>
-            </div>
-        );
+        return <EmptyFriendModal
+            heading='No Pending Requests'
+            description="You haven't sent or received any friend requests."
+        />;
     }
 
-    return <FriendRequestsSplitPanel data={data} />
+    return <FriendRequestsSplitPanel data={data} />;
 }
 
 export default function FriendRequestsModal({ data }) {

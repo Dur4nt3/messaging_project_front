@@ -5,6 +5,8 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 
 import FriendModalHeader from './FriendModalHeader';
+import LoadingFriendModal from './LoadingFriendModal';
+import EmptyFriendModal from './EmptyFriendModal';
 import FriendItem from './FriendItem';
 
 import './stylesheets/AddFriendModal.css';
@@ -13,22 +15,16 @@ function DenyListModalContent({ data }) {
     const { runningRefresher } = useContext(ChatsModal);
 
     if (runningRefresher) {
-        return (
-            <div className='loading-search-notice'>
-                <h2>Loading</h2>
-            </div>
-        );
+        return <LoadingFriendModal text='Loading' />;
     }
 
     if (!data || data?.friendships?.length === 0) {
         return (
-            <div className='not-found-notice'>
-                <h2>No Users Denied</h2>
-                <p>
-                    You haven't denied any users yet. If you do, they will
-                    appear here.
-                </p>
-            </div>
+            <EmptyFriendModal
+                heading='No Users Denied'
+                description="You haven't denied any users. If you do, they will
+                    appear here."
+            />
         );
     }
 

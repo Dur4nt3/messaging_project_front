@@ -5,7 +5,6 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 
 import FriendModalHeader from './FriendModalHeader';
-
 import LoadingFriendModal from './LoadingFriendModal';
 import EmptyFriendModal from './EmptyFriendModal';
 import FriendItem from './FriendItem';
@@ -14,13 +13,18 @@ import './stylesheets/FriendListModal.css';
 
 function FriendListModalContent({ data }) {
     if (data === null || !data?.friendships) {
-        return <LoadingFriendModal item='Friend List' />;
+        return <LoadingFriendModal text='Loading' />;
     }
 
     if (data?.friendships.length === 0) {
-        return <EmptyFriendModal item='Friend List' />;
+        return (
+            <EmptyFriendModal
+                heading='No Friends'
+                description="You haven't added any friends yet. Once you've added some friends, they will appear here."
+            />
+        );
     }
-    
+
     return (
         <div className='friend-list-cont'>
             {data?.friendships.map((record) => (

@@ -5,6 +5,8 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 
 import FriendModalHeader from './FriendModalHeader';
+import LoadingFriendModal from './LoadingFriendModal';
+import EmptyFriendModal from './EmptyFriendModal';
 import SearchForUser from './SearchForUser';
 import FriendItem from './FriendItem';
 
@@ -14,31 +16,25 @@ function AddFriendModalContent({ data }) {
     const { runningRefresher } = useContext(ChatsModal);
 
     if (runningRefresher) {
-        return (
-            <div className='loading-search-notice'>
-                <h2>Searching</h2>
-            </div>
-        );
+        return <LoadingFriendModal text='Searching' />;
     }
 
     if (!data) {
         return (
-            <div className='start-search-notice'>
-                <h2>Find Friends</h2>
-                <p>Search by username above and add new friends.</p>
-            </div>
+            <EmptyFriendModal
+                heading='Find Friends'
+                description='Search by username above and add new friends.'
+            />
         );
     }
 
     if (data?.friendships?.length === 0) {
         return (
-            <div className='not-found-notice'>
-                <h2>No Matches Found</h2>
-                <p>
-                    We couldn't find any users with that name. Try again with a
-                    different term.
-                </p>
-            </div>
+            <EmptyFriendModal
+                heading='No Matches Found'
+                description="We couldn't find any users with that name. Try again with a
+                    different term."
+            />
         );
     }
 

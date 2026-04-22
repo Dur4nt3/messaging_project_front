@@ -2,12 +2,21 @@
     margin-top: 2rem;
     margin-bottom: 1.25rem;
 
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
+    text-align: center;
 }
 
 .loading-friend-modal-cont h2 {
     font-size: var(--fs-md);
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
 }
