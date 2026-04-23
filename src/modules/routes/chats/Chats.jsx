@@ -1,7 +1,5 @@
 import { useContext } from 'react';
-import ChatsModal from '../../utilities/context/ChatsModal';
 import IsMobile from '../../utilities/context/IsMobile';
-import ChatHighlight from '../../utilities/context/ChatHighlight';
 
 import { useLoaderData } from 'react-router';
 
@@ -18,13 +16,6 @@ import ChatsFooter from './footer/ChatsFooter';
 export default function Chats() {
     const { currentlyMobile } = useContext(IsMobile);
 
-    const {
-        highlightedChat,
-        handleChatHighlight,
-        fetchingChatData,
-        currentChatData,
-    } = useContext(ChatHighlight);
-
     const loaderData = useLoaderData();
     const user = loaderData?.user;
     const dashboardChatData = loaderData?.chats;
@@ -34,17 +25,8 @@ export default function Chats() {
             <ChatsRouteModals />
             <ChatsNav userInitials={getUserInitials(user.name)} />
             <ChatsMain>
-                <ChatList
-                    activeChats={dashboardChatData}
-                    highlightedChat={highlightedChat}
-                    handleChatHighlight={handleChatHighlight}
-                />
-                {!currentlyMobile ? (
-                    <ChatPanel
-                        data={currentChatData}
-                        loading={fetchingChatData}
-                    />
-                ) : null}
+                <ChatList activeChats={dashboardChatData} />
+                {!currentlyMobile ? <ChatPanel /> : null}
             </ChatsMain>
             <ChatsFooter />
         </>

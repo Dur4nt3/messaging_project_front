@@ -1,6 +1,6 @@
 import { Menu } from '@mantine/core';
 
-import { UserCog } from 'lucide-react';
+import { CircleQuestionMark } from 'lucide-react';
 
 import './stylesheets/UserProfileMenu.css';
 
@@ -25,8 +25,8 @@ export default function UserProfileMenu({ opened, setOpened, userInitials }) {
                 <button className='avatar-button'>{userInitials}</button>
             </Menu.Target>
             <Menu.Dropdown>
-                <Menu.Item leftSection={<UserCog size={14} />}>
-                    Edit Profile
+                <Menu.Item leftSection={<CircleQuestionMark size={14} />}>
+                    Soon
                 </Menu.Item>
             </Menu.Dropdown>
         </Menu>

@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import ChatHighlight from '../../../utilities/context/ChatHighlight';
+
 import ChatPanelMainMessages from './ChatPanelMainMessages';
 import ChatPanelViewMore from './ChatPanelViewMore';
 
@@ -7,22 +10,7 @@ import { CircleX } from 'lucide-react';
 
 import './stylesheets/ChatPanelMain.css';
 
-function ChatsMainAlt({ error }) {
-    if (error) {
-        return (
-            <div className='loading-state'>
-                <CircleX strokeWidth={1.5} className='error-icon' />
-                <p className='loading-label'>Failed to fetch chat</p>
-                <p className='loading-description'>
-                    An unexpected error occurred.
-                </p>
-                <p className='loading-description'>
-                    Exit the chat and try again.
-                </p>
-            </div>
-        );
-    }
-
+function ChatsMainAlt() {
     return (
         <div className='loading-state'>
             <FormLoader color='#00c2a8' size={48} />
@@ -34,12 +22,12 @@ function ChatsMainAlt({ error }) {
     );
 }
 
-export default function ChatPanelMain({
-    messages,
-    scrollRef,
-    more,
-    preserveScrollOnChange,
-}) {
+export default function ChatPanelMain({ scrollRef, preserveScrollOnChange }) {
+    const { currentChatData } = useContext(ChatHighlight);
+
+    const messages = currentChatData?.messages;
+    const more = currentChatData?.more;
+
     return (
         <div className='chat-panel-main' ref={scrollRef}>
             {more && (
@@ -52,7 +40,7 @@ export default function ChatPanelMain({
             {messages ? (
                 <ChatPanelMainMessages messages={messages} />
             ) : (
-                <ChatsMainAlt error={messages === false} />
+                <ChatsMainAlt />
             )}
         </div>
     );

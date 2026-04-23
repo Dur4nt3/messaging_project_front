@@ -21,15 +21,17 @@ export default function useFetchChatData() {
             if (prev !== null) {
                 if (from) {
                     return {
-                        messages: [...prev.messages, ...data.messages],
+                        id: data?.id,
                         name: prev.name,
+                        messages: [...prev.messages, ...data.messages],
                         more: data.more,
                     };
                 }
                 if (to) {
                     return {
-                        messages: [...data.messages, ...prev.messages],
+                        id: data?.id,
                         name: prev.name,
+                        messages: [...data.messages, ...prev.messages],
                         more: data.more,
                     };
                 }

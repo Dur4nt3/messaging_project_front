@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import ChatHighlight from '../../../utilities/context/ChatHighlight';
+
 import ChatActionMenu from './ChatActionMenu';
 import DotsLoader from '../../../utilities/miscComponents/DotsLoader';
 
@@ -29,11 +32,11 @@ function RecipientData({ recipientName }) {
     );
 }
 
-export default function ChatPanelHeader({
-    recipientName = null,
-    onClose,
-    isModal = false,
-}) {
+export default function ChatPanelHeader({ onClose = null, isModal = false }) {
+    const { currentChatData } = useContext(ChatHighlight);
+
+    const recipientName = currentChatData?.name;
+
     return (
         <div
             className={
@@ -45,11 +48,9 @@ export default function ChatPanelHeader({
             <div className='header-left'>
                 <RecipientData recipientName={recipientName} />
             </div>
-            {isModal && (
-                <div className='header-right'>
-                    <ChatActionMenu onClose={onClose} isModal={isModal} />
-                </div>
-            )}
+            <div className='header-right'>
+                <ChatActionMenu onClose={onClose} isModal={isModal} />
+            </div>
         </div>
     );
 }

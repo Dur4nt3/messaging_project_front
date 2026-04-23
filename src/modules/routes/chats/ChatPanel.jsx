@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import ChatHighlight from '../../utilities/context/ChatHighlight';
 
 import useChatScroll from '../../utilities/hooks/useChatScroll';
 
@@ -21,7 +22,9 @@ function ChatNotSelected() {
     );
 }
 
-export default function ChatPanel({ data, loading }) {
+export default function ChatPanel() {
+    const { fetchingChatData, currentChatData } = useContext(ChatHighlight);
+
     const [inputHeight, setInputHeight] = useState(0);
 
     const scrollThreshold = 200;
@@ -31,9 +34,9 @@ export default function ChatPanel({ data, loading }) {
         showScrollButton,
         scrollToBottom,
         preserveScrollOnChange,
-    } = useChatScroll(data?.messages, scrollThreshold);
+    } = useChatScroll(currentChatData?.messages, scrollThreshold);
 
-    if (!data && !loading) {
+    if (!currentChatData && !fetchingChatData) {
         return (
             <div className='chat-panel'>
                 <ChatNotSelected />
@@ -43,20 +46,14 @@ export default function ChatPanel({ data, loading }) {
 
     return (
         <div className='chat-panel'>
-            <ChatPanelHeader
-                recipientName={data !== false ? data?.name : false}
-            />
+            <ChatPanelHeader />
             <ChatPanelMain
-                messages={data !== false ? data?.messages : false}
-                more={data !== false ? data?.more : false}
                 preserveScrollOnChange={preserveScrollOnChange}
                 scrollRef={scrollRef}
             />
             <ChatPanelInput
-                loaded={!!data}
                 setInputHeight={setInputHeight}
                 preserveScrollOnChange={preserveScrollOnChange}
-                data={data}
             />
             {showScrollButton && (
                 <ScrollToChatBottom

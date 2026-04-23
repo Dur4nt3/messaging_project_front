@@ -1,4 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react';
+import ChatHighlight from '../../../utilities/context/ChatHighlight';
+
 import { useFetcher } from 'react-router';
 
 import { Textarea } from '@mantine/core';
@@ -17,19 +19,23 @@ import './stylesheets/ChatPanelInput.css';
 // If this isn't rendered within a modal
 // Ensure to supply the message data
 export default function ChatPanelInput({
-    loaded,
     setInputHeight,
     preserveScrollOnChange,
-    data = null,
 }) {
+    const { currentChatData } = useContext(ChatHighlight);
     const { currentChatModal, runRefresher } = useContext(ChatsModal);
+
     const fetcher = useFetcher();
 
     const [messageInput, setMessageInput] = useState('');
 
     const inputRef = useRef();
 
-    const messages = data ? data?.messages : currentChatModal?.data?.messages;
+    const loaded = !!currentChatData;
+
+    const messages = currentChatData
+        ? currentChatData?.messages
+        : currentChatModal?.data?.messages;
     const chatId = messages?.[0]?.chatId;
 
     useEffect(() => {

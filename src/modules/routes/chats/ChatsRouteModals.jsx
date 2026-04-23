@@ -9,7 +9,6 @@ import DenyListModal from './modals/DenyListModal';
 
 const MODALS = {
     CHAT_WINDOW: ChatModal,
-    EDIT_PROFILE: <h1>WIP</h1>,
     FRIEND_LIST: FriendListModal,
     FRIEND_REQUEST: FriendRequestsModal,
     ADD_FRIEND: AddFriendModal,

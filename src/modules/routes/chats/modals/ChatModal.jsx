@@ -1,7 +1,9 @@
 import { useContext, useState } from 'react';
-import { useDisclosure } from '@mantine/hooks';
+import ChatHighlight from '../../../utilities/context/ChatHighlight';
 import ChatsModal from '../../../utilities/context/ChatsModal';
 import IsMobile from '../../../utilities/context/IsMobile';
+
+import { useDisclosure } from '@mantine/hooks';
 
 import useChatScroll from '../../../utilities/hooks/useChatScroll';
 
@@ -15,7 +17,9 @@ import { ChevronDown } from 'lucide-react';
 
 import './stylesheets/ChatModal.css';
 
-export default function ChatModal({ data }) {
+export default function ChatModal() {
+    const { currentChatData } = useContext(ChatHighlight);
+
     const { closeModal } = useContext(ChatsModal);
     const { currentlyMobile } = useContext(IsMobile);
 
@@ -28,7 +32,7 @@ export default function ChatModal({ data }) {
         showScrollButton,
         scrollToBottom,
         preserveScrollOnChange,
-    } = useChatScroll(data?.messages, scrollThreshold);
+    } = useChatScroll(currentChatData?.messages, scrollThreshold);
 
     const [opened, { close }] = useDisclosure(true);
 
@@ -55,19 +59,12 @@ export default function ChatModal({ data }) {
                 close: 'chat-modal-close',
             }}
         >
-            <ChatPanelHeader
-                recipientName={data !== false ? data?.name : false}
-                onClose={handleClose}
-                isModal={true}
-            />
+            <ChatPanelHeader onClose={handleClose} isModal={true} />
             <ChatPanelMain
-                messages={data !== false ? data?.messages : false}
-                more={data !== false ? data?.more : false}
                 preserveScrollOnChange={preserveScrollOnChange}
                 scrollRef={scrollRef}
             />
             <ChatPanelInput
-                loaded={!!data}
                 setInputHeight={setInputHeight}
                 preserveScrollOnChange={preserveScrollOnChange}
             />

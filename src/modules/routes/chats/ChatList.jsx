@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import ChatHighlight from '../../utilities/context/ChatHighlight';
+
 import { useFetcher } from 'react-router';
 
 import FormLoader from '../../utilities/miscComponents/FormLoader';
@@ -9,7 +12,9 @@ import { X } from 'lucide-react';
 
 import './stylesheets/ChatList.css';
 
-function ChatListItem({ chatRecord, highlighted, handleChatHighlight }) {
+function ChatListItem({ chatRecord }) {
+    const { highlightedChat, handleChatHighlight } = useContext(ChatHighlight);
+
     const fetcher = useFetcher();
 
     const handleChatClick = () => {
@@ -18,7 +23,7 @@ function ChatListItem({ chatRecord, highlighted, handleChatHighlight }) {
             return;
         }
 
-        if (highlighted) {
+        if (highlightedChat) {
             return handleChatHighlight(null);
         }
         return handleChatHighlight(chatRecord.chatId);
@@ -26,7 +31,9 @@ function ChatListItem({ chatRecord, highlighted, handleChatHighlight }) {
 
     return (
         <div
-            className={highlighted ? 'chat-list-item active' : 'chat-list-item'}
+            className={
+                highlightedChat ? 'chat-list-item active' : 'chat-list-item'
+            }
             onClick={handleChatClick}
             tabIndex={0}
         >
@@ -78,11 +85,7 @@ function ChatListItem({ chatRecord, highlighted, handleChatHighlight }) {
     );
 }
 
-export default function ChatList({
-    activeChats,
-    highlightedChat,
-    handleChatHighlight,
-}) {
+export default function ChatList({ activeChats }) {
     if (activeChats.length === 0) {
         return (
             <div className='chat-list'>
@@ -97,12 +100,7 @@ export default function ChatList({
     return (
         <div className='chat-list'>
             {activeChats.map((chat) => (
-                <ChatListItem
-                    key={chat.chatId}
-                    chatRecord={chat}
-                    highlighted={highlightedChat === chat.chatId}
-                    handleChatHighlight={handleChatHighlight}
-                />
+                <ChatListItem key={chat.chatId} chatRecord={chat} />
             ))}
         </div>
     );
