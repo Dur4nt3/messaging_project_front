@@ -89,14 +89,15 @@
 
 /* ################################ ACTIONS STYLES ################################ */
 
-.friend-item-cont .friend-item-actions .reply-to-request-form {
+.friend-item-cont .friend-item-actions .reply-to-request-form,
+.friend-item-cont .friend-item-actions .friend-list-action-forms {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .friend-item-cont .friend-item-actions button,
-.friend-item-cont .friend-item-actions div {
+.friend-item-cont .friend-item-actions div:not(.friend-list-action-forms) {
     min-height: calc(1lh + 0.15rem * 2);
 
     border: 1px solid var(--separator-border);
@@ -120,7 +121,8 @@
     border: 1px solid var(--primary-very-low-opacity);
 }
 
-.friend-item-cont .friend-item-actions button.reply-to-request.deny {
+.friend-item-cont .friend-item-actions button.reply-to-request.deny,
+.friend-item-cont .friend-item-actions button.remove-friend-button {
     border: 1px solid var(--error-very-low-opacity);
 }
 
@@ -142,12 +144,15 @@
     .friend-item-actions
     .send-friend-request:not(:disabled):focus
     svg,
-.friend-item-cont .friend-item-actions .already-friends svg {
+.friend-item-cont .friend-item-actions .already-friends svg,
+.friend-item-cont .friend-item-actions .open-chat-button:not(:disabled):hover svg,
+.friend-item-cont .friend-item-actions .open-chat-button:not(:disabled):focus svg {
     color: var(--primary-color);
 }
 
 .friend-item-cont .friend-item-actions .reply-to-request.deny svg,
-.friend-item-cont .friend-item-actions .request-denied svg {
+.friend-item-cont .friend-item-actions .request-denied svg,
+.friend-item-cont .friend-item-actions .remove-friend-button svg {
     color: var(--error-color);
 }
 
@@ -167,18 +172,20 @@
 .friend-item-cont
     .friend-item-actions
     .send-friend-request:not(:disabled):focus,
-.friend-item-cont .friend-item-actions .already-friends,
+.friend-item-cont .friend-item-actions div.already-friends,
 .friend-item-cont
     .friend-item-actions
     .reply-to-request.accept:not(:disabled):hover,
 .friend-item-cont
     .friend-item-actions
-    .reply-to-request.accept:not(:disabled):focus {
+    .reply-to-request.accept:not(:disabled):focus,
+    .friend-item-cont .friend-item-actions .open-chat-button:not(:disabled):hover,
+    .friend-item-cont .friend-item-actions .open-chat-button:not(:disabled):focus {
     border: 1px solid var(--primary-very-low-opacity);
     background-color: var(--primary-extremely-low-opacity);
 }
 
-.friend-item-cont .friend-item-actions .request-pending,
+.friend-item-cont .friend-item-actions div.request-pending,
 .friend-item-cont
     .friend-item-actions
     .reply-to-request.delete:not(:disabled):hover,
@@ -189,13 +196,19 @@
     background-color: var(--pending-extremely-low-opacity);
 }
 
-.friend-item-cont .friend-item-actions .request-denied,
+.friend-item-cont .friend-item-actions div.request-denied,
 .friend-item-cont
     .friend-item-actions
     .reply-to-request.deny:not(:disabled):hover,
 .friend-item-cont
     .friend-item-actions
-    .reply-to-request.deny:not(:disabled):focus {
+    .reply-to-request.deny:not(:disabled):focus,
+.friend-item-cont
+    .friend-item-actions
+    button.remove-friend-button:not(:disabled):hover,
+.friend-item-cont
+    .friend-item-actions
+    button.remove-friend-button:not(:disabled):focus {
     border: 1px solid var(--error-very-low-opacity);
     background-color: var(--error-extremely-low-opacity);
 }

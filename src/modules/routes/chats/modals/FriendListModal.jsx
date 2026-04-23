@@ -28,7 +28,11 @@ function FriendListModalContent({ data }) {
     return (
         <div className='friend-list-cont'>
             {data?.friendships.map((record) => (
-                <FriendItem key={record.friendshipId} userData={record} />
+                <FriendItem
+                    key={record.friendshipId}
+                    userData={record}
+                    variant='FRIEND_LIST'
+                />
             ))}
         </div>
     );

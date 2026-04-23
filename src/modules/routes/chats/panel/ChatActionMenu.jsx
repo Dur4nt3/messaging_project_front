@@ -5,39 +5,7 @@ import { Ellipsis, CornerDownLeft, UserX } from 'lucide-react';
 
 import './stylesheets/ChatActionMenu.css';
 
-function ChatMenuItems({ populated, onClose, isModal }) {
-    if (populated) {
-        if (isModal) {
-            return (
-                <>
-                    <Menu.Item
-                        leftSection={<CornerDownLeft size={14} />}
-                        onClick={onClose}
-                    >
-                        Exit Chat
-                    </Menu.Item>
-                    <Menu.Divider />
-                    <Menu.Item
-                        leftSection={<UserX size={14} />}
-                        className='chat-menu-remove-friend'
-                    >
-                        Remove Friend
-                    </Menu.Item>
-                </>
-            );
-        }
-        return (
-            <>
-                <Menu.Item
-                    leftSection={<UserX size={14} />}
-                    className='chat-menu-remove-friend'
-                >
-                    Remove Friend
-                </Menu.Item>
-            </>
-        );
-    }
-
+function ChatMenuItems({ onClose, isModal }) {
     if (isModal) {
         return (
             <>
@@ -50,21 +18,9 @@ function ChatMenuItems({ populated, onClose, isModal }) {
             </>
         );
     }
-
-    return (
-        <>
-            <Menu.Item>
-                <span className='loading-indicator'>Loading</span>
-            </Menu.Item>
-        </>
-    );
 }
 
-export default function ChatActionMenu({
-    populated = false,
-    onClose,
-    isModal,
-}) {
+export default function ChatActionMenu({ onClose, isModal }) {
     const [opened, setOpened] = useState(false);
 
     return (
@@ -93,11 +49,7 @@ export default function ChatActionMenu({
                 </button>
             </Menu.Target>
             <Menu.Dropdown>
-                <ChatMenuItems
-                    populated={populated}
-                    onClose={onClose}
-                    isModal={isModal}
-                />
+                <ChatMenuItems onClose={onClose} isModal={isModal} />
             </Menu.Dropdown>
         </Menu>
     );

@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useCallback } from 'react';
 import ChatsModal from './ChatsModal';
 import IsMobile from './IsMobile';
 import useFetchChatData from '../hooks/useFetchChatData';
@@ -19,26 +19,36 @@ export default function ChatHighlightProvider({ children }) {
         setCurrentChatData,
     } = useFetchChatData();
 
-    const handleChatHighlight = (chatId) => {
-        if (fetchingChatData) {
-            return;
-        }
+    const handleChatHighlight = useCallback(
+        (chatId) => {
+            if (fetchingChatData) {
+                return;
+            }
 
-        setHighlightedChat(chatId);
+            setHighlightedChat(chatId);
 
-        if (chatId === null) {
-            setCurrentChatData(null);
-            setRefresher(() => () => null);
-            return;
-        }
+            if (chatId === null) {
+                setCurrentChatData(null);
+                setRefresher(() => () => null);
+                return;
+            }
 
-        if (currentlyMobile) {
-            openModal('CHAT_WINDOW', null);
-        }
+            if (currentlyMobile) {
+                openModal('CHAT_WINDOW', null);
+            }
 
-        fetchChatDataRunner(chatId);
-        setRefresher(() => fetchChatDataRunner);
-    };
+            fetchChatDataRunner(chatId);
+            setRefresher(() => fetchChatDataRunner);
+        },
+        [
+            currentlyMobile,
+            fetchChatDataRunner,
+            fetchingChatData,
+            openModal,
+            setCurrentChatData,
+            setRefresher,
+        ]
+    );
 
     // If "currentChatData" changed
     // Assign the new value to the modal's context

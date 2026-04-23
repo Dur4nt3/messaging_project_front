@@ -32,7 +32,7 @@ function DenyListModalContent({ data }) {
         <div className='matching-user-list'>
             {data.friendships.map((user) => (
                 <FriendItem
-                    key={user.userId}
+                    key={user.friendshipId}
                     userData={user}
                     variant={'DENY_LIST'}
                 />

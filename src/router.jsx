@@ -20,6 +20,7 @@ import signupAction from './modules/utilities/actions/signupAction';
 import loginAction from './modules/utilities/actions/loginAction';
 import logoutAction from './modules/utilities/actions/logoutAction';
 
+import openChatAction from './modules/utilities/actions/openChatAction';
 import deleteChatAction from './modules/utilities/actions/deleteChatAction';
 
 import sendMessageAction from './modules/utilities/actions/sendMessageAction';
@@ -27,6 +28,7 @@ import sendMessageAction from './modules/utilities/actions/sendMessageAction';
 import addFriendAction from './modules/utilities/actions/addFriendAction';
 import handleFriendRequestAction from './modules/utilities/actions/handleFriendRequestAction';
 import removeFromDenyAction from './modules/utilities/actions/removeFromDenyAction';
+import deleteFriendAction from './modules/utilities/actions/deleteFriendAction';
 
 const router = createBrowserRouter([
     {
@@ -56,20 +58,33 @@ const router = createBrowserRouter([
                 loader: chatsLoader,
             },
             {
+                path: '/error',
+                element: <ErrorPage />,
+            },
+
+            {
                 path: '/logout',
                 loader: redirectToChats,
                 action: logoutAction,
+            },
+
+            {
+                path: '/open-chat/:chatId',
+                loader: redirectToChats,
+                action: openChatAction,
             },
             {
                 path: '/delete-chat/:chatId',
                 loader: redirectToChats,
                 action: deleteChatAction,
             },
+
             {
                 path: '/send-message/:chatId',
                 loader: redirectToChats,
                 action: sendMessageAction,
             },
+
             {
                 path: '/send-friend-request/:userId',
                 loader: redirectToChats,
@@ -86,8 +101,9 @@ const router = createBrowserRouter([
                 action: removeFromDenyAction,
             },
             {
-                path: '/error',
-                element: <ErrorPage />,
+                path: '/delete-friend/:userId',
+                loader: redirectToChats,
+                action: deleteFriendAction,
             },
         ],
     },

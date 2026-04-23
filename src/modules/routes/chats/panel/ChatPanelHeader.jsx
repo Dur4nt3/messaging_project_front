@@ -45,13 +45,11 @@ export default function ChatPanelHeader({
             <div className='header-left'>
                 <RecipientData recipientName={recipientName} />
             </div>
-            <div className='header-right'>
-                <ChatActionMenu
-                    populated={!!recipientName}
-                    onClose={onClose}
-                    isModal={isModal}
-                />
-            </div>
+            {isModal && (
+                <div className='header-right'>
+                    <ChatActionMenu onClose={onClose} isModal={isModal} />
+                </div>
+            )}
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import FriendListAction from './FriendListAction';
 import AddFriendAction from './AddFriendAction';
 import FriendRequestsAction from './FriendRequestsAction';
 import DenyListAction from './DenyListAction';
@@ -10,7 +11,7 @@ import './stylesheets/FriendItem.css';
 
 function FriendItemActions({ variant, data = null }) {
     const variantMap = {
-        FRIEND_LIST: null,
+        FRIEND_LIST: FriendListAction,
         FRIEND_REQUEST: FriendRequestsAction,
         ADD_FRIEND: AddFriendAction,
         DENY_LIST: DenyListAction,
