@@ -32,7 +32,7 @@ function ChatListItem({ chatRecord }) {
     return (
         <div
             className={
-                highlightedChat ? 'chat-list-item active' : 'chat-list-item'
+                highlightedChat === chatRecord.chatId ? 'chat-list-item active' : 'chat-list-item'
             }
             onClick={handleChatClick}
             tabIndex={0}
@@ -50,9 +50,9 @@ function ChatListItem({ chatRecord }) {
                     </p>
                 </div>
                 <div className='chat-data-bottom'>
-                    <p className='message-preview'>
+                    <p className={`message-preview ${!chatRecord.messages.lastContent && 'hide-preview'}`}>
                         {chatRecord.messages.sent && 'You: '}
-                        {chatRecord.messages.lastContent}
+                        {chatRecord.messages.lastContent || 'NO MESSAGE'}
                     </p>
                     {chatRecord.messages.unread > 0 ? (
                         <p className='unread-badge'>

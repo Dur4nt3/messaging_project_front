@@ -150,6 +150,10 @@
     flex-grow: 1;
 }
 
+.chat-list .chat-list-item .chat-data-bottom .message-preview.hide-preview {
+    visibility: hidden;
+}
+
 .chat-list .chat-list-item .chat-data-bottom .unread-badge {
     background: var(--primary-color);
     color: var(--dark-text);

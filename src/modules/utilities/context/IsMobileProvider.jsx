@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 import IsMobile from './IsMobile';
 
 export default function IsMobileProvider({ children }) {
-    const [currentlyMobile, setMobile] = useState(window.innerWidth < 748);
+    const [currentlyMobile, setMobile] = useState(window.innerWidth < 768);
 
     const updateMedia = () => {
-        setMobile(window.innerWidth < 748);
+        setMobile(window.innerWidth < 768);
     };
 
     useEffect(() => {

@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             },
 
             {
-                path: '/open-chat/:chatId',
+                path: '/open-chat/:userId',
                 loader: redirectToChats,
                 action: openChatAction,
             },

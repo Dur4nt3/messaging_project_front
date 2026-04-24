@@ -21,7 +21,8 @@ export default function useFetchChatData() {
             if (prev !== null) {
                 if (from) {
                     return {
-                        id: data?.id,
+                        userId: data?.userId,
+                        chatId: data?.chatId,
                         name: prev.name,
                         messages: [...prev.messages, ...data.messages],
                         more: data.more,
@@ -29,7 +30,8 @@ export default function useFetchChatData() {
                 }
                 if (to) {
                     return {
-                        id: data?.id,
+                        userId: data?.userId,
+                        chatId: data?.chatId,
                         name: prev.name,
                         messages: [...data.messages, ...prev.messages],
                         more: data.more,

@@ -22,7 +22,7 @@ function ChatMenuItems({ onClose, isModal }) {
         }
     }, [fetcher.state, fetcher.data, runRefresher]);
 
-    if (currentChatData?.id) {
+    if (currentChatData?.chatId) {
         if (isModal) {
             return (
                 <>

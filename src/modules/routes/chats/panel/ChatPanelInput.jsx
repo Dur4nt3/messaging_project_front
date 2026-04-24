@@ -36,7 +36,8 @@ export default function ChatPanelInput({
     const messages = currentChatData
         ? currentChatData?.messages
         : currentChatModal?.data?.messages;
-    const chatId = messages?.[0]?.chatId;
+
+    const chatId = currentChatData?.chatId;
 
     useEffect(() => {
         if (fetcher.state === 'idle' && fetcher.data?.success === true) {

@@ -10,7 +10,7 @@ import { MessageSquare, UserMinus, CloudAlert } from 'lucide-react';
 
 export default function FriendListAction({ data }) {
     const { runRefresher, closeModal } = useContext(ChatsModal);
-    const { handleHighlight } = useContext(ChatHighlight);
+    const { handleChatHighlight } = useContext(ChatHighlight);
 
     const openChatFetcher = useFetcher();
     const removeFriendFetcher = useFetcher();
@@ -39,12 +39,12 @@ export default function FriendListAction({ data }) {
             openChatFetcher.data?.success === true
         ) {
             closeModal();
-            handleHighlight(openChatFetcher.data.chatId);
+            handleChatHighlight(openChatFetcher.data.chatId);
         }
     }, [
         openChatFetcher.state,
         openChatFetcher.data,
-        handleHighlight,
+        handleChatHighlight,
         closeModal,
     ]);
 

@@ -24,7 +24,8 @@ export default async function fetchChatData(chatId, from, to, firstMessageId) {
     const results = await response.json();
 
     return {
-        id: results.id,
+        chatId: results.chatId,
+        userId: results.userId,
         name: results.name,
         messages: results.messages,
         more: results.more,
