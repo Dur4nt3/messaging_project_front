@@ -1,6 +1,15 @@
-import { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import {
+    useRef,
+    useState,
+    useEffect,
+    useLayoutEffect,
+    useContext,
+} from 'react';
+import ChatHighlight from '../context/ChatHighlight';
 
-export default function useChatScroll(messages, scrollThreshold) {
+export default function useChatScroll(scrollThreshold) {
+    const { currentChatData, highlightedChat } = useContext(ChatHighlight);
+
     const scrollRef = useRef();
 
     const hasLoadedRef = useRef(false);
@@ -10,6 +19,8 @@ export default function useChatScroll(messages, scrollThreshold) {
     const beforeChangeScroll = useRef();
 
     const [showScrollButton, setShowScrollButton] = useState(false);
+
+    const messages = currentChatData?.messages;
 
     const lastMessageId = messages?.[messages?.length - 1]?.messageId;
     const firstMessageId = messages?.[0]?.messageId;
@@ -31,10 +42,8 @@ export default function useChatScroll(messages, scrollThreshold) {
     // Fix for panel
     // Ensures scroll to bottom on every load
     useEffect(() => {
-        if (!lastMessageId) {
-            hasLoadedRef.current = false;
-        }
-    }, [lastMessageId]);
+        hasLoadedRef.current = false;
+    }, [highlightedChat]);
 
     // Initial scroll to bottom on load
     useEffect(() => {

@@ -13,6 +13,20 @@
     background-color: var(--background-color);
 }
 
+.friend-list-modal-content,
+.friend-requests-modal-content,
+.add-friend-modal-content,
+.deny-list-modal-content,
+.friend-list-modal-body,
+.friend-requests-modal-body,
+.add-friend-modal-body,
+.deny-list-modal-body,
+.friend-requests-split-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
 .matching-user-list,
 .friend-list-cont,
 .friend-requests-split-panel .split-panel-content {
@@ -23,4 +37,114 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.friend-requests-split-panel .split-panel-content {
+    overflow-y: auto;
+}
+
+.friend-list-cont::-webkit-scrollbar,
+.matching-user-list::-webkit-scrollbar,
+.friend-requests-split-panel .split-panel-content::-webkit-scrollbar {
+    width: 0.35rem;
+}
+.friend-list-cont::-webkit-scrollbar-track,
+.matching-user-list::-webkit-scrollbar-track,
+.friend-requests-split-panel .split-panel-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.friend-list-cont::-webkit-scrollbar-thumb,
+.matching-user-list::-webkit-scrollbar-thumb,
+.friend-requests-split-panel .split-panel-content::-webkit-scrollbar-thumb {
+    background: var(--muted-color-sharper);
+    border-radius: 2px;
+}
+
+.friend-list-cont
+    .friend-item-cont
+    .friend-item-user-data
+    .user-info
+    .user-username {
+    max-width: 12ch;
+}
+
+.friend-list-cont
+    .friend-item-cont
+    .friend-item-user-data
+    .user-info
+    .user-name {
+    max-width: 16ch;
+}
+
+@media (min-width: 40rem) {
+    .friend-list-modal-content,
+    .add-friend-modal-content,
+    .friend-requests-modal-content,
+    .deny-list-modal-content {
+        flex-grow: 1;
+        max-width: 50ch;
+    }
+
+    .friend-list-cont
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-username {
+        max-width: 29ch;
+    }
+
+    .friend-list-cont
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-name {
+        max-width: 35ch;
+    }
+}
+
+@media (min-width: 48rem) {
+    .friend-list-modal-content,
+    .add-friend-modal-content,
+    .friend-requests-modal-content,
+    .deny-list-modal-content {
+        flex-grow: 1;
+        max-width: 60ch;
+    }
+
+    .friend-list-cont
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-username {
+        max-width: 37.5ch;
+    }
+
+    .friend-list-cont
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-name {
+        max-width: 45ch;
+    }
+}
+
+@media (min-width: 64rem) {
+    .friend-list-modal-content,
+    .add-friend-modal-content,
+    .friend-requests-modal-content,
+    .deny-list-modal-content {
+        flex-grow: 1;
+        max-width: 62.5ch;
+    }
+}
+
+@media (min-width: 80rem) {
+    .friend-list-modal-content,
+    .add-friend-modal-content,
+    .friend-requests-modal-content,
+    .deny-list-modal-content {
+        flex-grow: 1;
+        max-width: 65ch;
+    }
 }

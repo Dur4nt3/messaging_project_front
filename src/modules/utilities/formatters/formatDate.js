@@ -8,14 +8,16 @@ export function formatDate(dateString, trim = false) {
     const diffMs = now - date;
     const diffHours = diffMs / (1000 * 60 * 60);
 
-    if (diffHours < 24) {
+    const midnightToday = new Date().setHours(0,0,0,0);
+
+    if (date > midnightToday) {
         const hours = date.getHours().toString().padStart(2, '0');
         const minutes = date.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     }
 
     if (diffHours < 48) {
-        return 'yesterday';
+        return 'Yesterday';
     }
 
     const days = Math.floor(diffHours / 24);

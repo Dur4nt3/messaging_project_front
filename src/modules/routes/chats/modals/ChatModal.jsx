@@ -18,8 +18,6 @@ import { ChevronDown } from 'lucide-react';
 import './stylesheets/ChatModal.css';
 
 export default function ChatModal() {
-    const { currentChatData } = useContext(ChatHighlight);
-
     const { closeModal } = useContext(ChatsModal);
     const { currentlyMobile } = useContext(IsMobile);
 
@@ -32,7 +30,7 @@ export default function ChatModal() {
         showScrollButton,
         scrollToBottom,
         preserveScrollOnChange,
-    } = useChatScroll(currentChatData?.messages, scrollThreshold);
+    } = useChatScroll(scrollThreshold);
 
     const [opened, { close }] = useDisclosure(true);
 

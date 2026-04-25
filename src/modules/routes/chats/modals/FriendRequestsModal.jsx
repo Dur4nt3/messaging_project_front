@@ -9,7 +9,7 @@ import LoadingFriendModal from './LoadingFriendModal';
 import EmptyFriendModal from './EmptyFriendModal';
 import FriendRequestsSplitPanel from './FriendRequestsSplitPanel';
 
-import './stylesheets/AddFriendModal.css';
+import './stylesheets/FriendRequestsModal.css';
 
 function FriendRequestsModalContent({ data }) {
     const { runningRefresher } = useContext(ChatsModal);

@@ -119,7 +119,7 @@
     font-size: var(--fs-sm);
     color: var(--light-text);
     font-weight: 700;
-    max-width: 20ch;
+    max-width: 15ch;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -128,7 +128,7 @@
 .chat-list .chat-list-item .chat-data-top .last-message-time {
     font-size: var(--fs-sm);
     font-weight: 500;
-    color: var(--muted-color-sharper);
+    color: var(--muted-color-sharper-popover);
     margin-left: 0.5rem;
 }
 
@@ -234,8 +234,8 @@
     }
 
     .chat-list .chat-list-item .chat-data-top .recipient {
-        width: 20ch;
-        max-width: 20ch;
+        width: 15ch;
+        max-width: 15ch;
     }
 
     .chat-list .chat-list-item .chat-data-bottom .message-preview {
@@ -246,8 +246,8 @@
 
 @media (min-width: 64rem) {
     .chat-list .chat-list-item .chat-data-top .recipient {
-        width: 25ch;
-        max-width: 25ch;
+        width: 22.5ch;
+        max-width: 22.5ch;
     }
 
     .chat-list .chat-list-item .chat-data-bottom .message-preview {

@@ -38,18 +38,54 @@
     color: var(--muted-color-sharper);
 }
 
-.matching-user-list::-webkit-scrollbar,
-.friend-requests-split-panel .split-panel-content::-webkit-scrollbar {
-    width: 0.35rem;
+.matching-user-list
+    .friend-item-cont
+    .friend-item-user-data
+    .user-info
+    .user-username {
+    max-width: 17ch;
 }
 
-.matching-user-list::-webkit-scrollbar-track,
-.friend-requests-split-panel .split-panel-content::-webkit-scrollbar-track {
-    background: transparent;
+.matching-user-list
+    .friend-item-cont
+    .friend-item-user-data
+    .user-info
+    .user-name {
+    max-width: 20ch;
 }
 
-.matching-user-list::-webkit-scrollbar-thumb,
-.friend-requests-split-panel .split-panel-content::-webkit-scrollbar-thumb {
-    background: var(--muted-color-sharper);
-    border-radius: 2px;
+@media (min-width: 40rem) {
+    .matching-user-list
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-username {
+        max-width: 33ch;
+    }
+
+    .matching-user-list
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-name {
+        max-width: 40ch;
+    }
+}
+
+@media (min-width: 48rem) {
+    .matching-user-list
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-username {
+        max-width: 42ch;
+    }
+
+    .matching-user-list
+        .friend-item-cont
+        .friend-item-user-data
+        .user-info
+        .user-name {
+        max-width: 50ch;
+    }
 }

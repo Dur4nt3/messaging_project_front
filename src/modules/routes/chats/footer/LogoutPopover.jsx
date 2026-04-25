@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import ChatHighlight from '../../../utilities/context/ChatHighlight';
+
 import { useFetcher } from 'react-router';
 
 import { Popover } from '@mantine/core';
@@ -10,6 +12,8 @@ import { LogOut } from 'lucide-react';
 import './stylesheets/LogoutPopover.css';
 
 export default function LogoutPopover({ opened, setOpened }) {
+    const { handleChatHighlight } = useContext(ChatHighlight);
+
     const fetcher = useFetcher();
 
     useEffect(() => {
@@ -58,6 +62,7 @@ export default function LogoutPopover({ opened, setOpened }) {
                         >
                             <button
                                 className='confirm-logout ghost-button-design'
+                                onClick={() => handleChatHighlight(null)}
                                 type='submit'
                                 disabled={fetcher.state !== 'idle'}
                             >

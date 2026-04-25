@@ -12,7 +12,7 @@ import { X } from 'lucide-react';
 
 import './stylesheets/ChatList.css';
 
-function ChatListItem({ chatRecord }) {
+function ChatListItem({ chatRecord, markChatAsRead }) {
     const { highlightedChat, handleChatHighlight } = useContext(ChatHighlight);
 
     const fetcher = useFetcher();
@@ -23,16 +23,29 @@ function ChatListItem({ chatRecord }) {
             return;
         }
 
-        if (highlightedChat) {
+        if (highlightedChat === chatRecord?.chatId) {
             return handleChatHighlight(null);
         }
-        return handleChatHighlight(chatRecord.chatId);
+
+        if (
+            highlightedChat !== chatRecord?.chatId &&
+            highlightedChat !== null
+        ) {
+            markChatAsRead(chatRecord?.chatId);
+            handleChatHighlight(null);
+            return handleChatHighlight(chatRecord?.chatId);
+        }
+
+        markChatAsRead(chatRecord?.chatId);
+        return handleChatHighlight(chatRecord?.chatId);
     };
 
     return (
         <div
             className={
-                highlightedChat === chatRecord.chatId ? 'chat-list-item active' : 'chat-list-item'
+                highlightedChat === chatRecord.chatId
+                    ? 'chat-list-item active'
+                    : 'chat-list-item'
             }
             onClick={handleChatClick}
             tabIndex={0}
@@ -50,7 +63,9 @@ function ChatListItem({ chatRecord }) {
                     </p>
                 </div>
                 <div className='chat-data-bottom'>
-                    <p className={`message-preview ${!chatRecord.messages.lastContent && 'hide-preview'}`}>
+                    <p
+                        className={`message-preview ${!chatRecord.messages.lastContent && 'hide-preview'}`}
+                    >
                         {chatRecord.messages.sent && 'You: '}
                         {chatRecord.messages.lastContent || 'NO MESSAGE'}
                     </p>
@@ -85,7 +100,7 @@ function ChatListItem({ chatRecord }) {
     );
 }
 
-export default function ChatList({ activeChats }) {
+export default function ChatList({ activeChats, markChatAsRead }) {
     if (activeChats.length === 0) {
         return (
             <div className='chat-list'>
@@ -100,7 +115,11 @@ export default function ChatList({ activeChats }) {
     return (
         <div className='chat-list'>
             {activeChats.map((chat) => (
-                <ChatListItem key={chat.chatId} chatRecord={chat} />
+                <ChatListItem
+                    key={chat.chatId}
+                    chatRecord={chat}
+                    markChatAsRead={markChatAsRead}
+                />
             ))}
         </div>
     );

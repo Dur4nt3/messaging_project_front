@@ -34,7 +34,7 @@ export default function ChatPanel() {
         showScrollButton,
         scrollToBottom,
         preserveScrollOnChange,
-    } = useChatScroll(currentChatData?.messages, scrollThreshold);
+    } = useChatScroll(scrollThreshold);
 
     if (!currentChatData && !fetchingChatData) {
         return (
