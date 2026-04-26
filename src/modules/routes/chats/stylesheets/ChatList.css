@@ -109,6 +109,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.5rem;
 }
 
 .chat-list .chat-list-item .chat-data-top {
@@ -129,7 +130,6 @@
     font-size: var(--fs-sm);
     font-weight: 500;
     color: var(--muted-color-sharper-popover);
-    margin-left: 0.5rem;
 }
 
 .chat-list .chat-list-item .chat-data-bottom {
@@ -219,11 +219,11 @@
 
 @media (min-width: 40rem) {
     .chat-list .chat-list-item .chat-data-top .recipient {
-        max-width: 42.5ch;
+        max-width: 44ch;
     }
 
     .chat-list .chat-list-item .chat-data-bottom .message-preview {
-        max-width: 50ch;
+        max-width: 52ch;
     }
 }
 
@@ -234,36 +234,44 @@
     }
 
     .chat-list .chat-list-item .chat-data-top .recipient {
-        width: 15ch;
         max-width: 15ch;
     }
 
+    .chat-list .chat-list-item .chat-data-top .last-message-time {
+        font-size: var(--fs-xs-plus);
+    }
+
     .chat-list .chat-list-item .chat-data-bottom .message-preview {
-        width: 25ch;
         max-width: 25ch;
     }
 }
 
 @media (min-width: 64rem) {
     .chat-list .chat-list-item .chat-data-top .recipient {
-        width: 22.5ch;
         max-width: 22.5ch;
     }
 
     .chat-list .chat-list-item .chat-data-bottom .message-preview {
-        width: 30ch;
-        max-width: 30ch;
+        max-width: 32ch;
     }
 }
 
 @media (min-width: 80rem) {
     .chat-list .chat-list-item .chat-data-top .recipient {
-        width: 30ch;
-        max-width: 30ch;
+        max-width: 25ch;
     }
 
     .chat-list .chat-list-item .chat-data-bottom .message-preview {
-        width: 35ch;
         max-width: 35ch;
+    }
+}
+
+@media (min-width: 96rem) {
+    .chat-list .chat-list-item .chat-data-top .recipient {
+        max-width: 32ch;
+    }
+
+    .chat-list .chat-list-item .chat-data-bottom .message-preview {
+        max-width: 44ch;
     }
 }

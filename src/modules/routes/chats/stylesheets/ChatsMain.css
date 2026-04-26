@@ -6,3 +6,24 @@
 
     min-height: 0;
 }
+
+@media (min-width: 48rem) {
+    .chats-main {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+@media (min-width: 64rem) {
+    .chats-main {
+        display: grid;
+        grid-template-columns: 1fr 1.625fr;
+    }
+}
+
+@media (min-width: 80rem) {
+    .chats-main {
+        display: grid;
+        grid-template-columns: 1fr 1.925fr;
+    }
+}
