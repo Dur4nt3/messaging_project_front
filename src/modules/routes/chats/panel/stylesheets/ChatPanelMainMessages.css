@@ -40,7 +40,7 @@
 .chat-panel-main .message-row .message-content {
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    max-width: 80%;
+    max-width: 27.5ch;
 
     padding: 0.5rem 0.75rem;
     border-radius: 0.75rem;
@@ -98,4 +98,28 @@
     font-size: var(--fs-sm);
     font-weight: 500;
     color: var(--muted-color);
+}
+
+@media (min-width: 40rem) {
+    .chat-panel-main .message-row .message-content {
+        max-width: 55ch;
+    }
+}
+
+@media (min-width: 48rem) {
+    .chat-panel-main .message-row .message-content {
+        max-width: 42.5ch;
+    }
+}
+
+@media (min-width: 64rem) {
+    .chat-panel-main .message-row .message-content {
+        max-width: 55ch;
+    }
+}
+
+@media (min-width: 80rem) {
+    .chat-panel-main .message-row .message-content {
+        max-width: 65ch;
+    }
 }

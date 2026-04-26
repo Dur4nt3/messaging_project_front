@@ -33,7 +33,7 @@ export default function Chats() {
                 chat.lastMessageAt !== previousList?.[i]?.lastMessageAt
         );
 
-        if (hasServerUpdate) {
+        if (hasServerUpdate || loaderChatList.length !== previousList.length) {
             previousChatList.current = loaderChatList;
             setChatList(loaderChatList);
         }
