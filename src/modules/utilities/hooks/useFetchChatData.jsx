@@ -26,6 +26,7 @@ export default function useFetchChatData() {
                         name: prev.name,
                         messages: [...prev.messages, ...data.messages],
                         more: data.more,
+                        friends: data.friends,
                     };
                 }
                 if (to) {
@@ -35,6 +36,7 @@ export default function useFetchChatData() {
                         name: prev.name,
                         messages: [...data.messages, ...prev.messages],
                         more: data.more,
+                        friends: data.friends,
                     };
                 }
             }

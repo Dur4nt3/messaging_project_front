@@ -18,9 +18,21 @@ function ChatMenuItems({ onClose, isModal }) {
 
     useEffect(() => {
         if (fetcher.state === 'idle' && fetcher.data?.success) {
-            console.log('refresh');
+            const messages = currentChatData?.messages;
+            const lastMessageId = messages
+                ? messages[messages.length - 1]?.messageId
+                : null;
+            const firstMessageId = messages ? messages[0]?.messageId : null;
+
+            runRefresher(
+                currentChatData?.chatId,
+                lastMessageId,
+                null,
+                firstMessageId
+            );
         }
-    }, [fetcher.state, fetcher.data, runRefresher]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [fetcher.state, fetcher.data]);
 
     if (currentChatData?.chatId) {
         if (isModal) {
@@ -32,25 +44,34 @@ function ChatMenuItems({ onClose, isModal }) {
                     >
                         Exit Chat
                     </Menu.Item>
-                    <Menu.Divider />
-                    <fetcher.Form action='' method='DELETE'>
-                        <Menu.Item
-                            leftSection={<UserX size={14} />}
-                            className='chat-menu-remove-friend'
-                        >
-                            Remove Friend
-                        </Menu.Item>
-                    </fetcher.Form>
+                    {currentChatData?.friends && (
+                        <>
+                            <Menu.Divider />
+                            <fetcher.Form
+                                action={`/delete-friend/${currentChatData?.userId}`}
+                                method='DELETE'
+                            >
+                                <Menu.Item
+                                    leftSection={<UserX size={14} />}
+                                    className='chat-menu-remove-friend'
+                                    type='submit'
+                                >
+                                    Remove Friend
+                                </Menu.Item>
+                            </fetcher.Form>
+                        </>
+                    )}
                 </>
             );
         }
 
         return (
             <>
-                <fetcher.Form action='' method='DELETE'>
+                <fetcher.Form action={`/delete-friend/${currentChatData?.userId}`} method='DELETE'>
                     <Menu.Item
                         leftSection={<UserX size={14} />}
                         className='chat-menu-remove-friend'
+                        type='submit'
                     >
                         Remove Friend
                     </Menu.Item>

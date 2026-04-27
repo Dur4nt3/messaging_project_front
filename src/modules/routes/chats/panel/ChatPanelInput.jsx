@@ -16,6 +16,18 @@ import { SendHorizontal } from 'lucide-react';
 
 import './stylesheets/ChatPanelInput.css';
 
+function determineFormClassname(loaded, friends) {
+    if (!loaded && !friends) {
+        return 'chat-panel-input';
+    }
+
+    if (loaded && !friends) {
+        return 'chat-panel-input not-friends';
+    }
+
+    return 'chat-panel-input loaded';
+}
+
 // If this isn't rendered within a modal
 // Ensure to supply the message data
 export default function ChatPanelInput({
@@ -78,9 +90,10 @@ export default function ChatPanelInput({
     return (
         <>
             <fetcher.Form
-                className={
-                    loaded ? 'chat-panel-input loaded' : 'chat-panel-input'
-                }
+                className={determineFormClassname(
+                    loaded,
+                    currentChatData?.friends
+                )}
                 action={
                     loaded && chatId ? `/send-message/${chatId}` : '/no-action'
                 }
@@ -95,7 +108,7 @@ export default function ChatPanelInput({
                     aria-label='Send a message'
                     autosize
                     maxRows={5}
-                    disabled={!loaded}
+                    disabled={!loaded || !currentChatData.friends}
                     tabIndex={loaded ? 0 : -1}
                     name='message'
                     id='message'
@@ -108,7 +121,11 @@ export default function ChatPanelInput({
 
                 <button
                     type='submit'
-                    disabled={!loaded || fetcher.state !== 'idle'}
+                    disabled={
+                        !loaded ||
+                        fetcher.state !== 'idle' ||
+                        !currentChatData.friends
+                    }
                     className='send-message-button'
                 >
                     {fetcher.state === 'idle' ? (

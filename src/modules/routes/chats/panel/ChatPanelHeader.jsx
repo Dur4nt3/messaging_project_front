@@ -49,7 +49,9 @@ export default function ChatPanelHeader({ onClose = null, isModal = false }) {
                 <RecipientData recipientName={recipientName} />
             </div>
             <div className='header-right'>
-                <ChatActionMenu onClose={onClose} isModal={isModal} />
+                {!isModal && !currentChatData?.friends ? null : (
+                    <ChatActionMenu onClose={onClose} isModal={isModal} />
+                )}
             </div>
         </div>
     );

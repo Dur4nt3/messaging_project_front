@@ -8,7 +8,6 @@ export default async function deleteFriendAction({ params }) {
         };
     }
 
-
     const token = getToken();
     if (token === null) {
         throw new Response(null, { status: 401 });

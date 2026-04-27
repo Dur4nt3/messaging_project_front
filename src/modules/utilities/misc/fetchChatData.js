@@ -29,5 +29,6 @@ export default async function fetchChatData(chatId, from, to, firstMessageId) {
         name: results.name,
         messages: results.messages,
         more: results.more,
+        friends: results.friends,
     };
 }
