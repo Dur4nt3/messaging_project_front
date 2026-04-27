@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 import ChatHighlight from '../../utilities/context/ChatHighlight';
 
 import { useFetcher } from 'react-router';
@@ -15,7 +15,19 @@ import './stylesheets/ChatList.css';
 function ChatListItem({ chatRecord, markChatAsRead }) {
     const { highlightedChat, handleChatHighlight } = useContext(ChatHighlight);
 
+    const itemRef = useRef();
+
     const fetcher = useFetcher();
+
+    useEffect(() => {
+        const item = itemRef.current;
+        if (highlightedChat === chatRecord?.chatId && item) {
+            item.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            });
+        }
+    }, [highlightedChat, chatRecord?.chatId]);
 
     const handleChatClick = () => {
         // Don't highlight a chat that is being removed
@@ -49,6 +61,7 @@ function ChatListItem({ chatRecord, markChatAsRead }) {
             }
             onClick={handleChatClick}
             tabIndex={0}
+            ref={itemRef}
         >
             <div className='chat-avatar'>
                 {getUserInitials(chatRecord.chatParticipant.user.name)}
