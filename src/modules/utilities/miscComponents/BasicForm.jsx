@@ -15,8 +15,8 @@ export default function BasicForm({
     belowButtonAction,
 }) {
     return (
-        <Form method='POST' action={actionRoute} className='basic-form'>
-            <h1 className='form-heading'>{headingText}</h1>
+        <Form method='POST' action={actionRoute} className='basic-form' aria-labelledby='form-heading'>
+            <h1 className='form-heading' id='form-heading'>{headingText}</h1>
 
             { serverError && <FormBannerError errorText={serverError} /> }
 
