@@ -92,6 +92,10 @@
     color: var(--muted-color);
 }
 
+.basic-form .form-row .password-visibility-toggle:hover {
+    background-color: var(--hover-background);
+}
+
 .basic-form .form-row:has(input:focus) label {
     color: var(--light-text);
 }
