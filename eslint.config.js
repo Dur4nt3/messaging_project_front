@@ -45,6 +45,7 @@ export default defineConfig([
                     ignoreComments: true,
                     ignoreStrings: true,
                     ignoreTemplateLiterals: true,
+                    ignoreRegExpLiterals: true,
                 },
             ],
 

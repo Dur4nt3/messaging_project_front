@@ -209,3 +209,213 @@ exports[`Test Suite For The Header > Renders the header 1`] = `
   "unmount": [Function],
 }
 `;
+
+exports[`Test suite for the homepage header > Renders the header 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style
+        data-mantine-styles="true"
+      >
+        
+
+
+
+
+      </style>
+      <style
+        data-mantine-styles="classes"
+      >
+        @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+      </style>
+      <header
+        class="home-header"
+      >
+        <h1
+          class="header-title"
+        >
+          Talk fast.
+          <br />
+          <span>
+            Stay close.
+          </span>
+        </h1>
+        <p
+          class="header-sub"
+        >
+          QuickTalk is a no-fuss messaging app built for real conversations, lightweight and simple.
+        </p>
+        <div
+          class="header-cta"
+        >
+          <a
+            class="signup-link primary-button-design"
+            data-discover="true"
+            href="/signup"
+          >
+            Get Started
+          </a>
+          <a
+            class="login-link ghost-button-design"
+            data-discover="true"
+            href="/login"
+          >
+            Log in
+          </a>
+        </div>
+      </header>
+    </div>
+    <div
+      data-mantine-shared-portal-node="true"
+      data-portal="true"
+    >
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="top-center"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="top-left"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root width-before-scroll-bar"
+        data-position="top-right"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root width-before-scroll-bar"
+        data-position="bottom-right"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="bottom-left"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="bottom-center"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style
+      data-mantine-styles="true"
+    >
+      
+
+
+
+
+    </style>
+    <style
+      data-mantine-styles="classes"
+    >
+      @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+    </style>
+    <header
+      class="home-header"
+    >
+      <h1
+        class="header-title"
+      >
+        Talk fast.
+        <br />
+        <span>
+          Stay close.
+        </span>
+      </h1>
+      <p
+        class="header-sub"
+      >
+        QuickTalk is a no-fuss messaging app built for real conversations, lightweight and simple.
+      </p>
+      <div
+        class="header-cta"
+      >
+        <a
+          class="signup-link primary-button-design"
+          data-discover="true"
+          href="/signup"
+        >
+          Get Started
+        </a>
+        <a
+          class="login-link ghost-button-design"
+          data-discover="true"
+          href="/login"
+        >
+          Log in
+        </a>
+      </div>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

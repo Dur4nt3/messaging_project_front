@@ -6,7 +6,11 @@ import userEvent from '@testing-library/user-event';
 import { MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 
-export default function renderApp(routes, token = null) {
+export default function renderApp(
+    routes,
+    token = null,
+    memoryRouterOptions = undefined
+) {
     const user = userEvent.setup();
 
     window.localStorage = {
@@ -16,7 +20,7 @@ export default function renderApp(routes, token = null) {
         clear: vi.fn(),
     };
 
-    const router = createMemoryRouter(routes);
+    const router = createMemoryRouter(routes, memoryRouterOptions);
     const app = (
         <MantineProvider>
             <Notifications />

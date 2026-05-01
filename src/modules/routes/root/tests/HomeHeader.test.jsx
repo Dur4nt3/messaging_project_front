@@ -38,7 +38,7 @@ const buildRoutes = () => [
     },
 ];
 
-describe('Test Suite For The Header', () => {
+describe('Test suite for the homepage header', () => {
     beforeEach(() => {
         vi.resetAllMocks();
     });

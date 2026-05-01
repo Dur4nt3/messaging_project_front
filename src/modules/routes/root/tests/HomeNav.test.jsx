@@ -48,7 +48,7 @@ const buildRoutes = (auth) => [
     },
 ];
 
-describe('Test Suite For The Navbar', () => {
+describe('Test suite for the homepage navbar', () => {
     beforeEach(() => {
         vi.resetAllMocks();
     });

@@ -1,5 +1,7 @@
 import { PasswordInput } from '@mantine/core';
 
+import formatTestId from '../formatters/formatTestId';
+
 export default function PasswordFormRow({
     labelText,
     inputId,
@@ -23,12 +25,17 @@ export default function PasswordFormRow({
                 }}
                 styles={{
                     input: {
-                        height: 38
-                    }
+                        height: 38,
+                    },
                 }}
             />
             {errorText !== null && errorText !== true && (
-                <span className='inline-error'>{errorText}</span>
+                <span
+                    className='inline-error'
+                    data-testid={`${formatTestId(labelText)}-inline-error`}
+                >
+                    {errorText}
+                </span>
             )}
         </div>
     );

@@ -30,7 +30,7 @@ const buildRoutes = () => [
 
 // The remaining elements don't have any meaningful functionality
 // This is just a snapshot test to ensure content is as expected
-describe('Test Suite For The Remaining Elements In Root', () => {
+describe('Test suite for the remaining elements in the Root component', () => {
     beforeEach(() => {
         vi.resetAllMocks();
     });
