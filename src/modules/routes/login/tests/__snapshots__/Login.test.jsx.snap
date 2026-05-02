@@ -1,0 +1,505 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test suite for the login form > Renders the form 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style
+        data-mantine-styles="true"
+      >
+        
+
+
+
+
+      </style>
+      <style
+        data-mantine-styles="classes"
+      >
+        @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+      </style>
+      <div
+        class="return-home-cont"
+      >
+        <a
+          data-discover="true"
+          href="/"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-chevron-left"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m15 18-6-6 6-6"
+            />
+          </svg>
+          Home
+        </a>
+      </div>
+      <main
+        class="login-main"
+      >
+        <form
+          action="/login"
+          aria-labelledby="form-heading"
+          class="basic-form"
+          data-discover="true"
+          method="post"
+        >
+          <h1
+            class="form-heading"
+            id="form-heading"
+          >
+            Log In
+          </h1>
+          <div
+            class="form-row"
+          >
+            <label
+              for="username"
+            >
+              Username
+            </label>
+            <div
+              class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+              data-size="sm"
+            >
+              <div
+                class="text-input-wrapper m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+                data-size="sm"
+                data-variant="default"
+                style="--input-height: var(--input-height-sm); --input-fz: var(--mantine-font-size-sm);"
+              >
+                <input
+                  class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                  data-variant="default"
+                  id="username"
+                  maxlength="30"
+                  name="username"
+                />
+              </div>
+            </div>
+            <span
+              class="inline-error"
+              data-testid="username-inline-error"
+            />
+          </div>
+          <div
+            class="form-row"
+          >
+            <label
+              for="password"
+            >
+              Password
+            </label>
+            <div
+              class="password-input-root password-input-root m_f61ca620 mantine-PasswordInput-root m_46b77525 mantine-InputWrapper-root mantine-PasswordInput-root"
+              data-size="sm"
+              data-variant="unstyled"
+              style="--psi-icon-size: var(--psi-icon-size-sm); --psi-button-size: var(--psi-button-size-sm);"
+            >
+              <div
+                class="password-input-wrapper m_6c018570 mantine-Input-wrapper mantine-PasswordInput-wrapper"
+                data-size="sm"
+                data-variant="unstyled"
+                data-with-right-section="true"
+                style="--input-height: var(--input-height-sm); --input-fz: var(--mantine-font-size-sm);"
+              >
+                <div
+                  class="m_ccf8da4c password-input m_8fb7ebe7 mantine-Input-input mantine-PasswordInput-input"
+                  data-variant="unstyled"
+                  style="height: 38px;"
+                >
+                  <input
+                    autocomplete="off"
+                    class="password-input-inner m_f2d85dd2 mantine-PasswordInput-innerInput"
+                    id="password"
+                    maxlength="30"
+                    name="password"
+                    type="password"
+                  />
+                </div>
+                <div
+                  class="m_82577fc2 mantine-Input-section mantine-PasswordInput-section"
+                  data-position="right"
+                >
+                  <button
+                    aria-label="Toggle password visibility"
+                    aria-pressed="false"
+                    class="mantine-focus-auto mantine-active password-visibility-toggle m_b1072d44 mantine-PasswordInput-visibilityToggle m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                    data-variant="subtle"
+                    style="--ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="m_8d3afb97 mantine-ActionIcon-icon"
+                    >
+                      <svg
+                        style="width: var(--psi-icon-size); height: var(--psi-icon-size);"
+                        viewBox="0 0 256 256"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h256v256H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M128 56c-80 0-112 72-112 72s32 72 112 72 112-72 112-72-32-72-112-72z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="16"
+                        />
+                        <circle
+                          cx="128"
+                          cy="128"
+                          fill="none"
+                          r="40"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="16"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <span
+              class="inline-error"
+              data-testid="password-inline-error"
+            />
+          </div>
+          <button
+            class="submit-form-button primary-button-design"
+            type="submit"
+          >
+            Log in
+          </button>
+          <p
+            class="not-signed below-form-text"
+          >
+            New here? 
+            <a
+              data-discover="true"
+              href="/signup"
+            >
+              Sign up.
+            </a>
+          </p>
+        </form>
+      </main>
+    </div>
+    <div
+      data-mantine-shared-portal-node="true"
+      data-portal="true"
+    >
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="top-center"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="top-left"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root width-before-scroll-bar"
+        data-position="top-right"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root width-before-scroll-bar"
+        data-position="bottom-right"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="bottom-left"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+      <div
+        class="m_b37d9ac7 mantine-Notifications-root"
+        data-position="bottom-center"
+        style="--notifications-z-index: 400; --notifications-container-width: calc(27.5rem * var(--mantine-scale));"
+      >
+        <div />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style
+      data-mantine-styles="true"
+    >
+      
+
+
+
+
+    </style>
+    <style
+      data-mantine-styles="classes"
+    >
+      @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+    </style>
+    <div
+      class="return-home-cont"
+    >
+      <a
+        data-discover="true"
+        href="/"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        Home
+      </a>
+    </div>
+    <main
+      class="login-main"
+    >
+      <form
+        action="/login"
+        aria-labelledby="form-heading"
+        class="basic-form"
+        data-discover="true"
+        method="post"
+      >
+        <h1
+          class="form-heading"
+          id="form-heading"
+        >
+          Log In
+        </h1>
+        <div
+          class="form-row"
+        >
+          <label
+            for="username"
+          >
+            Username
+          </label>
+          <div
+            class="m_46b77525 mantine-InputWrapper-root mantine-TextInput-root"
+            data-size="sm"
+          >
+            <div
+              class="text-input-wrapper m_6c018570 mantine-Input-wrapper mantine-TextInput-wrapper"
+              data-size="sm"
+              data-variant="default"
+              style="--input-height: var(--input-height-sm); --input-fz: var(--mantine-font-size-sm);"
+            >
+              <input
+                class="m_8fb7ebe7 mantine-Input-input mantine-TextInput-input"
+                data-variant="default"
+                id="username"
+                maxlength="30"
+                name="username"
+              />
+            </div>
+          </div>
+          <span
+            class="inline-error"
+            data-testid="username-inline-error"
+          />
+        </div>
+        <div
+          class="form-row"
+        >
+          <label
+            for="password"
+          >
+            Password
+          </label>
+          <div
+            class="password-input-root password-input-root m_f61ca620 mantine-PasswordInput-root m_46b77525 mantine-InputWrapper-root mantine-PasswordInput-root"
+            data-size="sm"
+            data-variant="unstyled"
+            style="--psi-icon-size: var(--psi-icon-size-sm); --psi-button-size: var(--psi-button-size-sm);"
+          >
+            <div
+              class="password-input-wrapper m_6c018570 mantine-Input-wrapper mantine-PasswordInput-wrapper"
+              data-size="sm"
+              data-variant="unstyled"
+              data-with-right-section="true"
+              style="--input-height: var(--input-height-sm); --input-fz: var(--mantine-font-size-sm);"
+            >
+              <div
+                class="m_ccf8da4c password-input m_8fb7ebe7 mantine-Input-input mantine-PasswordInput-input"
+                data-variant="unstyled"
+                style="height: 38px;"
+              >
+                <input
+                  autocomplete="off"
+                  class="password-input-inner m_f2d85dd2 mantine-PasswordInput-innerInput"
+                  id="password"
+                  maxlength="30"
+                  name="password"
+                  type="password"
+                />
+              </div>
+              <div
+                class="m_82577fc2 mantine-Input-section mantine-PasswordInput-section"
+                data-position="right"
+              >
+                <button
+                  aria-label="Toggle password visibility"
+                  aria-pressed="false"
+                  class="mantine-focus-auto mantine-active password-visibility-toggle m_b1072d44 mantine-PasswordInput-visibilityToggle m_8d3f4000 mantine-ActionIcon-root m_87cf2631 mantine-UnstyledButton-root"
+                  data-variant="subtle"
+                  style="--ai-bg: transparent; --ai-hover: var(--mantine-color-gray-light-hover); --ai-color: var(--mantine-color-gray-light-color); --ai-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="m_8d3afb97 mantine-ActionIcon-icon"
+                  >
+                    <svg
+                      style="width: var(--psi-icon-size); height: var(--psi-icon-size);"
+                      viewBox="0 0 256 256"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0h256v256H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M128 56c-80 0-112 72-112 72s32 72 112 72 112-72 112-72-32-72-112-72z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="16"
+                      />
+                      <circle
+                        cx="128"
+                        cy="128"
+                        fill="none"
+                        r="40"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="16"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <span
+            class="inline-error"
+            data-testid="password-inline-error"
+          />
+        </div>
+        <button
+          class="submit-form-button primary-button-design"
+          type="submit"
+        >
+          Log in
+        </button>
+        <p
+          class="not-signed below-form-text"
+        >
+          New here? 
+          <a
+            data-discover="true"
+            href="/signup"
+          >
+            Sign up.
+          </a>
+        </p>
+      </form>
+    </main>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

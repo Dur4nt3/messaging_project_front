@@ -101,7 +101,7 @@ describe('Test suite for the signup form', () => {
         expect(router.state.location.pathname).toBe('/login');
 
         expect(
-            screen.getByRole('heading', { name: /Log in/i })
+            screen.getByRole('heading', { name: /log in/i })
         ).toBeInTheDocument();
     });
 
