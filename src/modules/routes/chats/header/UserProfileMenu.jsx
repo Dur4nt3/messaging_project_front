@@ -20,6 +20,7 @@ export default function UserProfileMenu({ opened, setOpened, userInitials }) {
                 itemSection: 'profile-menu-item-section',
             }}
             offset={6}
+            id='chats-navbar-menu'
         >
             <Menu.Target>
                 <button className='avatar-button'>{userInitials}</button>
