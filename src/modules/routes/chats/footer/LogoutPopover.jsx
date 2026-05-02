@@ -34,6 +34,7 @@ export default function LogoutPopover({ opened, setOpened }) {
                 overlay: 'footer-popover-overlay',
             }}
             offset={4}
+            id='footer-logout-popover'
         >
             <Popover.Target>
                 <button

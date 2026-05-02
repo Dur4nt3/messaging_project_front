@@ -51,6 +51,7 @@ export default function FooterActionMenu({ opened, setOpened }) {
                 itemSection: 'footer-menu-item-section',
             }}
             offset={4}
+            id='footer-actions-menu'
         >
             <Menu.Target>
                 <button
