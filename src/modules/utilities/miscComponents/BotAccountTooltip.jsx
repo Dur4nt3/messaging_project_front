@@ -13,7 +13,7 @@ export default function BotAccountTooltip() {
                 tooltip: 'bot-account-tooltip',
             }}
         >
-            <BotMessageSquare strokeWidth={1.5} />
+            <BotMessageSquare strokeWidth={1.5} data-testid='bot-account' />
         </Tooltip>
     );
 }

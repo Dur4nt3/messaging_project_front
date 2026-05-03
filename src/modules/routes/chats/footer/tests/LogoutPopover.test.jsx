@@ -41,7 +41,7 @@ const memoryRouterOptions = {
     initialIndex: 0,
 };
 
-describe('Test suite for the chats footer', () => {
+describe('Test suite for the logout popover', () => {
     beforeEach(() => {
         vi.resetAllMocks();
 

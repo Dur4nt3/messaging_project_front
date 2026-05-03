@@ -18,7 +18,11 @@ export default function AddFriendAction({ data }) {
 
     if (fetcher.data?.success === false) {
         return (
-            <div className='request-denied error' aria-label='Could not send the request'>
+            <div
+                className='request-denied error'
+                aria-label='Could not send the request'
+                data-testid='request-denied-error'
+            >
                 <CloudAlert strokeWidth={1.5} />
             </div>
         );
@@ -26,7 +30,11 @@ export default function AddFriendAction({ data }) {
 
     if (data?.status === 'ACCEPTED') {
         return (
-            <div className='already-friends' aria-label='You are already a friend of this user'>
+            <div
+                className='already-friends'
+                aria-label='You are already a friend of this user'
+                data-testid={`action-on-${data?.userId}`}
+            >
                 <Check strokeWidth={1.5} />
             </div>
         );
@@ -34,7 +42,11 @@ export default function AddFriendAction({ data }) {
 
     if (data?.status === 'PENDING') {
         return (
-            <div className='request-pending' aria-label='A friend request to this user already exists'>
+            <div
+                className='request-pending'
+                aria-label='A friend request to this user already exists'
+                data-testid={`action-on-${data?.userId}`}
+            >
                 <Clock strokeWidth={1.5} />
             </div>
         );
@@ -42,7 +54,11 @@ export default function AddFriendAction({ data }) {
 
     if (data?.status === 'DENIED') {
         return (
-            <div className='request-denied' aria-label='You blocked this user'>
+            <div
+                className='request-denied'
+                aria-label='You blocked this user'
+                data-testid={`action-on-${data?.userId}`}
+            >
                 <CircleSlash strokeWidth={1.5} />
             </div>
         );
@@ -52,6 +68,7 @@ export default function AddFriendAction({ data }) {
         <fetcher.Form
             action={`/send-friend-request/${data.userId}`}
             method='POST'
+            data-testid={`action-on-${data?.userId}`}
         >
             <button
                 type='submit'

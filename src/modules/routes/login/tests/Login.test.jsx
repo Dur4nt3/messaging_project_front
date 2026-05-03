@@ -58,9 +58,6 @@ const memoryRouterOptions = {
     initialIndex: 0,
 };
 
-// TODO: Test action when 401 is returned
-// TODO: Test action when 200 is returned
-
 describe('Test suite for the login form', () => {
     beforeEach(() => {
         vi.resetAllMocks();

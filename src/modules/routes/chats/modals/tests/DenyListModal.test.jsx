@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, test } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { screen, waitFor, within } from '@testing-library/react';
 
 import renderApp from '../../../../../../tests/utilities/renderApp';
@@ -45,7 +45,7 @@ const memoryRouterOptions = {
     initialIndex: 0,
 };
 
-describe('Test suite for the chats footer', () => {
+describe('Test suite for the deny list modal', () => {
     beforeEach(() => {
         vi.resetAllMocks();
     });
