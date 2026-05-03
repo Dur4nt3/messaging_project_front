@@ -74,6 +74,10 @@ describe('Test suite for the chats footer', () => {
 
         await user.click(logoutPopoverButton);
 
+        // Since happy-dom cannot fully emulate behavior required by Mantine
+        // the dialog won't show up naturally
+        // fortunately it is added to the DOM
+        // therefore, I can adjust it as seen below
         let dialog = await screen.findByRole('dialog', { hidden: true });
         dialog.style.display = 'block';
 

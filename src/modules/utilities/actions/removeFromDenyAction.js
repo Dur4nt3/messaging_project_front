@@ -31,7 +31,7 @@ export default async function removeFromDenyAction({ params }) {
     }
 
     const results = await response.json();
-
+    
     if (results.success === true) {
         return {
             success: true,

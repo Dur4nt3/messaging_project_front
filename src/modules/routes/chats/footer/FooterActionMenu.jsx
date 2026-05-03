@@ -58,6 +58,7 @@ export default function FooterActionMenu({ opened, setOpened }) {
                     className='misc-actions'
                     onClick={() => setOpened(true)}
                     disabled={fetchingFriendData}
+                    aria-label='more actions'
                 >
                     <Ellipsis strokeWidth={1.5} />
                 </button>
