@@ -10,7 +10,9 @@ import ErrorPage from '../../../error/ErrorPage';
 import ChatsFooter from '../ChatsFooter';
 
 // Note: This is just a simple snapshot test for the footer
-// 
+// "LogoutPopover.test.jsx" 
+// and other tests at the "../modals" directory
+// delve into the interaction with the footer
 
 const buildRoutes = () => [
     {
