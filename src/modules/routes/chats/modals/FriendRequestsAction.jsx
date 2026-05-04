@@ -83,7 +83,7 @@ export default function FriendRequestsAction({ data }) {
 
     if (fetcher.data?.success === false) {
         return (
-            <div className='request-denied error'>
+            <div className='request-denied error' data-testid='request-denied-error'>
                 <CloudAlert strokeWidth={1.5} />
             </div>
         );

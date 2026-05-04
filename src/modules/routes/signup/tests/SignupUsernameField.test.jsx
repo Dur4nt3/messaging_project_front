@@ -62,18 +62,22 @@ describe('Test suite for the username field within the signup form', () => {
 
         // Empty field
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(/username must not be empty/i)
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(/username must not be empty/i)
+            ).toBeInTheDocument()
+        );
 
         // Too short
         await user.type(usernameField, '1');
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                /username must be between 3 and 30 characters/i
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(
+                    /username must be between 3 and 30 characters/i
+                )
+            ).toBeInTheDocument()
+        );
 
         await user.clear(usernameField);
         expect(usernameField).toHaveValue('');
@@ -88,11 +92,13 @@ describe('Test suite for the username field within the signup form', () => {
         // Not matching regex
         await user.type(usernameField, 'Test!');
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                'Username must only contain letters and numbers (lowercase only)'
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(
+                    'Username must only contain letters and numbers (lowercase only)'
+                )
+            ).toBeInTheDocument()
+        );
 
         await user.clear(usernameField);
         expect(usernameField).toHaveValue('');
@@ -102,8 +108,10 @@ describe('Test suite for the username field within the signup form', () => {
         await user.click(submitButton);
 
         // Username field should be error-free
-        expect(
-            within(signupForm).queryByTestId('username-inline-error')
-        ).not.toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).queryByTestId('username-inline-error')
+            ).not.toBeInTheDocument()
+        );
     });
 });

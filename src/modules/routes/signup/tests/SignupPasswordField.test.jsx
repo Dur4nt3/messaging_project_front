@@ -62,18 +62,22 @@ describe('Test suite for the password field within the signup form', () => {
 
         // Empty field
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(/password must not be empty/i)
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(/password must not be empty/i)
+            ).toBeInTheDocument()
+        );
 
         // Too short
         await user.type(passwordField, '1');
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                /password must be at least 8 characters long/i
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(
+                    /password must be at least 8 characters long/i
+                )
+            ).toBeInTheDocument()
+        );
 
         await user.clear(passwordField);
         expect(passwordField).toHaveValue('');
@@ -83,8 +87,10 @@ describe('Test suite for the password field within the signup form', () => {
         await user.click(submitButton);
 
         // Password field should be error-free
-        expect(
-            within(signupForm).queryByTestId('password-inline-error')
-        ).not.toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).queryByTestId('password-inline-error')
+            ).not.toBeInTheDocument()
+        );
     });
 });

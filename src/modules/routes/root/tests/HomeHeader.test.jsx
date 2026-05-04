@@ -76,7 +76,9 @@ describe('Test suite for the homepage header', () => {
         const loginLink = screen.getByRole('link', { name: /log in/i });
         await user.click(loginLink);
 
-        expect(router.state.location.pathname).toBe('/login');
+        await waitFor(() =>
+            expect(router.state.location.pathname).toBe('/login')
+        );
 
         const loginForm = screen.getByRole('form');
         expect(loginForm).toBeInTheDocument();

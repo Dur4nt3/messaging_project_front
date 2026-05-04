@@ -52,7 +52,7 @@ describe('Test suite for the confirm password field within the signup form', () 
 
     // This test will fail if a "fetch" is executed
     // This also serves to test the fact that a fetch isn't sent unless all fields are valid
-    it('Can properly validate the username field', async () => {
+    it('Can properly validate the confirm password field', async () => {
         const { user } = renderApp(buildRoutes(), null, memoryRouterOptions);
         await waitFor(() => screen.getByRole('form'));
 
@@ -64,21 +64,23 @@ describe('Test suite for the confirm password field within the signup form', () 
 
         // Empty field
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                /Password confirmation must not be empty/i
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(
+                    /Password confirmation must not be empty/i
+                )
+            ).toBeInTheDocument()
+        );
 
         // Not matching
         await user.type(passwordField, '12345678');
         await user.type(cPasswordField, '87654321');
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                /passwords do not match/i
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(/passwords do not match/i)
+            ).toBeInTheDocument()
+        );
 
         await user.clear(passwordField);
         await user.clear(cPasswordField);
@@ -91,9 +93,11 @@ describe('Test suite for the confirm password field within the signup form', () 
         await user.click(submitButton);
 
         // Password field and confirm password field should be error-free
-        expect(
-            within(signupForm).queryByTestId('password-inline-error')
-        ).not.toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).queryByTestId('password-inline-error')
+            ).not.toBeInTheDocument()
+        );
         expect(
             within(signupForm).queryByTestId('cpassword-inline-error')
         ).not.toBeInTheDocument();

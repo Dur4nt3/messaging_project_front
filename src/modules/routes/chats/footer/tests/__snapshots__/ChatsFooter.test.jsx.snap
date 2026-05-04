@@ -25,6 +25,7 @@ exports[`Test suite for the chats footer > Renders the navbar 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="menu"
+          aria-label="more actions"
           class="misc-actions"
           id="footer-actions-menu"
         >
@@ -160,6 +161,7 @@ exports[`Test suite for the chats footer > Renders the navbar 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="menu"
+        aria-label="more actions"
         class="misc-actions"
         id="footer-actions-menu"
       >

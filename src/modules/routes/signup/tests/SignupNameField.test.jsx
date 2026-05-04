@@ -62,18 +62,22 @@ describe('Test suite for the name field within the signup form', () => {
 
         // Empty field
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(/^name must not be empty$/i)
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(/^name must not be empty$/i)
+            ).toBeInTheDocument()
+        );
 
         // Too short
         await user.type(nameField, '1');
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                /^name must be between 3 and 30 characters$/i
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(
+                    /^name must be between 3 and 30 characters$/i
+                )
+            ).toBeInTheDocument()
+        );
 
         await user.clear(nameField);
         expect(nameField).toHaveValue('');
@@ -88,11 +92,13 @@ describe('Test suite for the name field within the signup form', () => {
         // Not matching regex
         await user.type(nameField, 'Test!');
         await user.click(submitButton);
-        expect(
-            within(signupForm).getByText(
-                'Name must only contain letters and numbers'
-            )
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).getByText(
+                    'Name must only contain letters and numbers'
+                )
+            ).toBeInTheDocument()
+        );
 
         await user.clear(nameField);
         expect(nameField).toHaveValue('');
@@ -102,8 +108,10 @@ describe('Test suite for the name field within the signup form', () => {
         await user.click(submitButton);
 
         // name field should be error-free
-        expect(
-            within(signupForm).queryByTestId('name-inline-error')
-        ).not.toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                within(signupForm).queryByTestId('name-inline-error')
+            ).not.toBeInTheDocument()
+        );
     });
 });

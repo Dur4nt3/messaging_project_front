@@ -34,35 +34,21 @@ export function mockAddFriend(
     };
 }
 
-/*
-
-{
-    "type": "ADD_FRIEND",
-    "friendships": [
-        {
-            "userId": 12,
-            "username": "test2",
-            "name": "Test Two",
-            "type": "HUMAN",
-            "status": "ACCEPTED",
-            "searchTerm": "test"
-        },
-        {
-            "userId": 13,
-            "username": "test4",
-            "name": "Test Four",
-            "type": "HUMAN",
-            "status": "PENDING",
-            "searchTerm": "test"
-        },
-        {
-            "userId": 14,
-            "username": "test3",
-            "name": "Test Three",
-            "type": "HUMAN",
-            "status": "DENIED",
-            "searchTerm": "test"
-        },
-    ]
+export function mockFriendRequest(
+    friendshipId,
+    senderId,
+    receiverId,
+    username,
+    name,
+    sent
+) {
+    return {
+        friendshipId,
+        senderId,
+        receiverId,
+        friendshipStatus: 'PENDING',
+        username,
+        name,
+        sent,
+    };
 }
-*/

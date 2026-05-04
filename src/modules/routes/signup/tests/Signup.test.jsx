@@ -98,7 +98,9 @@ describe('Test suite for the signup form', () => {
         const loginLink = screen.getByRole('link', { name: /log in./i });
         await user.click(loginLink);
 
-        expect(router.state.location.pathname).toBe('/login');
+        await waitFor(() =>
+            expect(router.state.location.pathname).toBe('/login')
+        );
 
         expect(
             screen.getByRole('heading', { name: /log in/i })
@@ -132,7 +134,9 @@ describe('Test suite for the signup form', () => {
 
         await user.click(submitButton);
 
-        expect(router.state.location.pathname).toBe('/login');
+        await waitFor(() =>
+            expect(router.state.location.pathname).toBe('/login')
+        );
         expect(
             screen.getByRole('heading', { name: /Log in/i })
         ).toBeInTheDocument();
