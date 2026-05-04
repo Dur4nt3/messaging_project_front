@@ -15,7 +15,7 @@ function RecipientData({ recipientName }) {
                 <span className='recipient-avatar'>-</span>
                 {recipientName !== false && (
                     <div className='recipient-name'>
-                        <DotsLoader />
+                        <DotsLoader testId='loading-panel-header' />
                     </div>
                 )}
             </>

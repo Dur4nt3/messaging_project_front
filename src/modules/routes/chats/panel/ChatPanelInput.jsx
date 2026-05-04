@@ -33,6 +33,7 @@ function determineFormClassname(loaded, friends) {
 export default function ChatPanelInput({
     setInputHeight,
     preserveScrollOnChange,
+    testEnv
 }) {
     const { currentChatData } = useContext(ChatHighlight);
     const { currentChatModal, runRefresher } = useContext(ChatsModal);
@@ -106,7 +107,7 @@ export default function ChatPanelInput({
                         setMessageInput(event.currentTarget.value)
                     }
                     aria-label='Send a message'
-                    autosize
+                    autosize={!testEnv}
                     maxRows={5}
                     disabled={!loaded || !currentChatData.friends}
                     tabIndex={loaded ? 0 : -1}

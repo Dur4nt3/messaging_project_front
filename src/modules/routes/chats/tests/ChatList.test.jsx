@@ -52,7 +52,7 @@ describe('Test suite for the chat list', () => {
         vi.resetAllMocks();
     });
 
-    it('Can indicate when the chatList is empty', async () => {
+    it('Can indicate when the chat list is empty', async () => {
         renderApp(
             buildRoutes([], markChatAsReadMock),
             true,

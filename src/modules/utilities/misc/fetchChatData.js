@@ -4,6 +4,7 @@ import { getToken } from '../session/manageToken';
 export default async function fetchChatData(chatId, from, to, firstMessageId) {
     const token = getToken();
 
+    // firstMessageId is used by the API to determine whether there are more messages to fetch
     const serverUrl = `${import.meta.env.VITE_API_URL}/chats/${chatId}/messages${formatChatDataQuery(from, to, firstMessageId)}`;
 
     const response = await fetch(serverUrl, {

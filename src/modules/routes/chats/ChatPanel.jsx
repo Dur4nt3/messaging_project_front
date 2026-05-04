@@ -22,7 +22,7 @@ function ChatNotSelected() {
     );
 }
 
-export default function ChatPanel() {
+export default function ChatPanel({ testEnv = false }) {
     const { fetchingChatData, currentChatData } = useContext(ChatHighlight);
 
     const [inputHeight, setInputHeight] = useState(0);
@@ -38,14 +38,14 @@ export default function ChatPanel() {
 
     if (!currentChatData && !fetchingChatData) {
         return (
-            <div className='chat-panel'>
+            <div className='chat-panel' data-testid='chat-panel'>
                 <ChatNotSelected />
             </div>
         );
     }
 
     return (
-        <div className='chat-panel'>
+        <div className='chat-panel' data-testid='chat-panel'>
             <ChatPanelHeader />
             <ChatPanelMain
                 preserveScrollOnChange={preserveScrollOnChange}
@@ -54,6 +54,7 @@ export default function ChatPanel() {
             <ChatPanelInput
                 setInputHeight={setInputHeight}
                 preserveScrollOnChange={preserveScrollOnChange}
+                testEnv={testEnv}
             />
             {showScrollButton && (
                 <ScrollToChatBottom

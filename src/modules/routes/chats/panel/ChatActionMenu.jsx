@@ -34,7 +34,9 @@ function ChatMenuItems({ onClose, isModal }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fetcher.state, fetcher.data]);
 
-    if (currentChatData?.chatId) {
+    // If it's not a modal and the users aren't friends
+    // the button to open the menu won't render at all (ternary is in "../ChatPanel.jsx")
+    if (currentChatData?.chatId && currentChatData.friends) {
         if (isModal) {
             return (
                 <>
@@ -55,6 +57,7 @@ function ChatMenuItems({ onClose, isModal }) {
                                     leftSection={<UserX size={14} />}
                                     className='chat-menu-remove-friend'
                                     type='submit'
+                                    aria-label='remove friend'
                                 >
                                     Remove Friend
                                 </Menu.Item>
@@ -67,11 +70,15 @@ function ChatMenuItems({ onClose, isModal }) {
 
         return (
             <>
-                <fetcher.Form action={`/delete-friend/${currentChatData?.userId}`} method='DELETE'>
+                <fetcher.Form
+                    action={`/delete-friend/${currentChatData?.userId}`}
+                    method='DELETE'
+                >
                     <Menu.Item
                         leftSection={<UserX size={14} />}
                         className='chat-menu-remove-friend'
                         type='submit'
+                        aria-label='remove friend'
                     >
                         Remove Friend
                     </Menu.Item>
@@ -126,6 +133,7 @@ export default function ChatActionMenu({ onClose, isModal }) {
                 <button
                     className='chat-actions'
                     onClick={() => setOpened(true)}
+                    aria-label='chat actions'
                 >
                     <Ellipsis strokeWidth={1.5} />
                 </button>
