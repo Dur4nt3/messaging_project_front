@@ -62,6 +62,7 @@ function ChatListItem({ chatRecord, markChatAsRead }) {
             onClick={handleChatClick}
             tabIndex={0}
             ref={itemRef}
+            data-testid='chat-list-item'
         >
             <div className='chat-avatar'>
                 {getUserInitials(chatRecord.chatParticipant.user.name)}
@@ -83,7 +84,7 @@ function ChatListItem({ chatRecord, markChatAsRead }) {
                         {chatRecord.messages.lastContent || 'NO MESSAGE'}
                     </p>
                     {chatRecord.messages.unread > 0 ? (
-                        <p className='unread-badge'>
+                        <p className='unread-badge' data-testid='unread-badge'>
                             {chatRecord.messages.unread > 9
                                 ? '9+'
                                 : chatRecord.messages.unread}
@@ -99,6 +100,7 @@ function ChatListItem({ chatRecord, markChatAsRead }) {
             >
                 <button
                     className='remove-chat'
+                    aria-label='hide chat'
                     disabled={fetcher.state !== 'idle'}
                     onClick={(e) => e.stopPropagation()}
                 >
@@ -116,7 +118,7 @@ function ChatListItem({ chatRecord, markChatAsRead }) {
 export default function ChatList({ activeChats, markChatAsRead }) {
     if (activeChats.length === 0) {
         return (
-            <div className='chat-list'>
+            <div className='chat-list' data-testid='chat-list'>
                 <h2 className='no-chats-title'>No chats yet</h2>
                 <p className='no-chats-description'>
                     Message a friend to get started
@@ -126,7 +128,7 @@ export default function ChatList({ activeChats, markChatAsRead }) {
     }
 
     return (
-        <div className='chat-list'>
+        <div className='chat-list' data-testid='chat-list'>
             {activeChats.map((chat) => (
                 <ChatListItem
                     key={chat.chatId}
