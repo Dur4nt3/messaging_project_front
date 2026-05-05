@@ -100,7 +100,9 @@ describe('Test suite for the homepage navbar', () => {
         const loginLink = screen.getByRole('link', { name: /log in/i });
         await user.click(loginLink);
 
-        expect(router.state.location.pathname).toBe('/login');
+        await waitFor(() =>
+            expect(router.state.location.pathname).toBe('/login')
+        );
 
         const loginForm = screen.getByRole('form');
         expect(loginForm).toBeInTheDocument();
@@ -122,7 +124,9 @@ describe('Test suite for the homepage navbar', () => {
         await user.click(chatsButton);
 
         // Initially navigate to /chats
-        expect(router.state.location.pathname).toBe('/chats');
+        await waitFor(() =>
+            expect(router.state.location.pathname).toBe('/chats')
+        );
 
         // Get redirected to the error page
         await waitFor(() => screen.getByRole('heading', { name: /401/i }));

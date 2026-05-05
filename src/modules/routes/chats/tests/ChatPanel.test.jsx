@@ -2,12 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { screen, waitFor, within } from '@testing-library/react';
 
 import renderApp from '../../../../../tests/utilities/renderApp';
-import mockFetches from '../../../../../tests/utilities/mockFetches';
-import mockMessage from '../../../../../tests/utilities/mockMessage';
-import mockChatListItem from '../../../../../tests/utilities/mockChatListItem';
-import mockChatData from '../../../../../tests/utilities/mockChatData';
-
-import { get200 } from '../../../../../tests/utilities/serverResponses';
 
 import AppShell from '../../../../AppShell';
 

@@ -106,8 +106,8 @@ describe('Test suite for the login form', () => {
         );
         await waitFor(() => screen.getByRole('form'));
 
-        const loginLink = screen.getByRole('link', { name: /sign up./i });
-        await user.click(loginLink);
+        const signupLink = screen.getByRole('link', { name: /sign up./i });
+        await user.click(signupLink);
 
         expect(router.state.location.pathname).toBe('/signup');
 
@@ -153,7 +153,9 @@ describe('Test suite for the login form', () => {
 
         await user.click(submitButton);
 
-        expect(within(loginForm).getByText(/invalid credentials!/i));
+        await waitFor(() =>
+            expect(within(loginForm).getByText(/invalid credentials!/i))
+        );
     });
 
     it('Can properly login', async () => {

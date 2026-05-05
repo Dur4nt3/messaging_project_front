@@ -6,6 +6,14 @@ export function get200(body) {
     };
 }
 
+export function get400(body) {
+    return {
+        ok: true,
+        status: 400,
+        body,
+    };
+}
+
 const error401 = {
     ok: true,
     status: 401,

@@ -137,8 +137,10 @@ describe('Test suite for the signup form', () => {
         await waitFor(() =>
             expect(router.state.location.pathname).toBe('/login')
         );
-        expect(
-            screen.getByRole('heading', { name: /Log in/i })
-        ).toBeInTheDocument();
+        await waitFor(() =>
+            expect(
+                screen.getByRole('heading', { name: /Log in/i })
+            ).toBeInTheDocument()
+        );
     });
 });

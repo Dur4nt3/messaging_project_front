@@ -18,11 +18,6 @@ import ErrorPage from '../../../error/ErrorPage';
 import ChatList from '../../ChatList';
 import ChatPanel from '../../ChatPanel';
 
-import deleteFriendAction from '../../../../utilities/actions/deleteFriendAction';
-
-// Note: Any functionality related to the chat modal
-// is tested at "../../modals/tests/ChatModal.test.jsx"
-
 const buildRoutes = (activeChats) => [
     {
         element: <AppShell />,
@@ -40,10 +35,7 @@ const buildRoutes = (activeChats) => [
                     </>
                 ),
             },
-            {
-                path: '/delete-friend/:userId',
-                action: deleteFriendAction,
-            },
+            
         ],
     },
 ];
