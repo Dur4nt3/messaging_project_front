@@ -4,13 +4,18 @@ import './stylesheets/ChatPanelMainMessages.css';
 
 function MessageCont({ message, sent }) {
     return (
-        <div className={sent ? 'message-row sent' : 'message-row received'}>
+        <div
+            className={sent ? 'message-row sent' : 'message-row received'}
+            data-testid={`message-row-${message.messageId}`}
+        >
             <div className='message-content'>{message.content}</div>
             <div className='message-meta'>
                 <div className='message-time'>
                     {formatDateExtended(message.sentAt)}{' '}
                 </div>
-                {message.edited && <span className="message-edited">edited</span>}
+                {message.edited && (
+                    <span className='message-edited'>edited</span>
+                )}
             </div>
         </div>
     );
