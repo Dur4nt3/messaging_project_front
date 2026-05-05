@@ -12,6 +12,8 @@ In particular, this project aims to create a messaging application.
 
 For the API backend visit [this](https://github.com/Dur4nt3/messaging_project_back) repository.
 
+For the overview repository, visit [this](https://github.com/Dur4nt3/messaging_project_overview) link.
+
 ## Skills Demonstrated
 
 - React
