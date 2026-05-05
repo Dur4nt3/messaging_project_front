@@ -33,7 +33,7 @@ function determineFormClassname(loaded, friends) {
 export default function ChatPanelInput({
     setInputHeight,
     preserveScrollOnChange,
-    testEnv
+    testEnv,
 }) {
     const { currentChatData } = useContext(ChatHighlight);
     const { currentChatModal, runRefresher } = useContext(ChatsModal);
@@ -100,13 +100,25 @@ export default function ChatPanelInput({
                 }
                 method='POST'
                 ref={inputRef}
+                data-testid='send-message-form'
+                aria-live='polite'
+                aria-describedby={
+                    loaded && !currentChatData.friends && 'not-friends-notice'
+                }
             >
+                {loaded && !currentChatData.friends && (
+                    <div id='not-friends-notice' aria-live='polite'>
+                        You're no a longer friend of this user! Non-friends
+                        cannot chat.
+                    </div>
+                )}
+
                 <Textarea
                     value={messageInput}
                     onChange={(event) =>
                         setMessageInput(event.currentTarget.value)
                     }
-                    aria-label='Send a message'
+                    aria-label='Write a message'
                     autosize={!testEnv}
                     maxRows={5}
                     disabled={!loaded || !currentChatData.friends}
@@ -121,6 +133,7 @@ export default function ChatPanelInput({
                 />
 
                 <button
+                    aria-label='Send message'
                     type='submit'
                     disabled={
                         !loaded ||
