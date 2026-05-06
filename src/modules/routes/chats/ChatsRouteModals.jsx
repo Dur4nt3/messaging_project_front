@@ -15,7 +15,7 @@ const MODALS = {
     DENY_LIST: DenyListModal,
 };
 
-export default function ChatsRouteModals() {
+export default function ChatsRouteModals({ testEnv = false }) {
     const { currentChatModal } = useContext(ChatsModal);
 
     if (!currentChatModal) {
@@ -28,5 +28,5 @@ export default function ChatsRouteModals() {
         return null;
     }
 
-    return <ModalComponent data={currentChatModal.data} />;
+    return <ModalComponent data={currentChatModal.data} testEnv={testEnv} />;
 }

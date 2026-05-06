@@ -17,7 +17,7 @@ import { ChevronDown } from 'lucide-react';
 
 import './stylesheets/ChatModal.css';
 
-export default function ChatModal() {
+export default function ChatModal({ testEnv }) {
     const { closeModal } = useContext(ChatsModal);
     const { currentlyMobile } = useContext(IsMobile);
 
@@ -56,6 +56,7 @@ export default function ChatModal() {
                 body: 'chat-modal-body',
                 close: 'chat-modal-close',
             }}
+            data-testid='chat-modal'
         >
             <ChatPanelHeader onClose={handleClose} isModal={true} />
             <ChatPanelMain
@@ -65,6 +66,7 @@ export default function ChatModal() {
             <ChatPanelInput
                 setInputHeight={setInputHeight}
                 preserveScrollOnChange={preserveScrollOnChange}
+                testEnv={testEnv}
             />
             {showScrollButton && (
                 <button
