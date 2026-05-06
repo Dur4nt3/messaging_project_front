@@ -108,6 +108,32 @@ describe('Test suite for the friend requests modal', () => {
         );
     });
 
+    it('Can close the friend requests modal', async () => {
+        const { user } = renderApp(buildRoutes(), true, memoryRouterOptions);
+        await waitFor(() => screen.getByRole('contentinfo'));
+
+        const { button } = await openMenuAndGetButton(user, /friend requests/i);
+
+        stalledFetch();
+
+        await user.click(button);
+
+        const friendRequestsModal = screen.getByRole('dialog');
+
+        const closeModalButton = within(friendRequestsModal).getByRole(
+            'button',
+            {
+                name: /close modal/i,
+            }
+        );
+
+        await user.click(closeModalButton);
+
+        await waitFor(() =>
+            expect(friendRequestsModal).not.toBeInTheDocument()
+        );
+    });
+
     it('Can properly switch between the sent and received tabs', async () => {
         const { user } = renderApp(buildRoutes(), true, memoryRouterOptions);
         await waitFor(() => screen.getByRole('contentinfo'));

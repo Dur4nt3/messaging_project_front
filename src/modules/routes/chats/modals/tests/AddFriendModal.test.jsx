@@ -79,6 +79,25 @@ describe('Test suite for the add friends modal', () => {
         );
     });
 
+    it('Can close the add friends modal', async () => {
+        const { user } = renderApp(buildRoutes(), true, memoryRouterOptions);
+        await waitFor(() => screen.getByRole('contentinfo'));
+
+        const { button } = await openMenuAndGetButton(user, /add friends/i);
+
+        stalledFetch();
+
+        await user.click(button);
+
+        const addFriendsModal = screen.getByRole('dialog');
+
+        const closeModalButton = within(addFriendsModal).getByRole('button', { name: /close modal/i});
+
+        await user.click(closeModalButton);
+        
+        await waitFor(() => expect(addFriendsModal).not.toBeInTheDocument());
+    });
+
     it('Can search within the modal', async () => {
         const { user } = renderApp(buildRoutes(), true, memoryRouterOptions);
         await waitFor(() => screen.getByRole('contentinfo'));

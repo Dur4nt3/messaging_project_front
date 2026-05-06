@@ -56,6 +56,7 @@ export default function FriendListAction({ data }) {
             <div
                 className='request-denied error'
                 aria-label='Could not send the request'
+                data-testid='request-denied-error'
             >
                 <CloudAlert strokeWidth={1.5} />
             </div>
@@ -68,7 +69,7 @@ export default function FriendListAction({ data }) {
                 method='POST'
                 action={`/open-chat/${data.sent ? data.receiverId : data.senderId}`}
             >
-                <button className='open-chat-button' disabled={disableButtons}>
+                <button className='open-chat-button' disabled={disableButtons} aria-label={`open chat with ${data.name}`}>
                     {openChatFetcher.state === 'idle' ? (
                         <MessageSquare strokeWidth={1.5} />
                     ) : (
@@ -84,6 +85,7 @@ export default function FriendListAction({ data }) {
                 <button
                     className='remove-friend-button'
                     disabled={disableButtons}
+                    aria-label={`remove ${data.name} from friend list`}
                 >
                     {removeFriendFetcher.state === 'idle' ? (
                         <UserMinus strokeWidth={1.5} />

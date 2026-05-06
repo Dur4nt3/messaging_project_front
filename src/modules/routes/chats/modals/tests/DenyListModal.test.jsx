@@ -106,6 +106,25 @@ describe('Test suite for the deny list modal', () => {
         );
     });
 
+    it('Can close the deny list modal', async () => {
+        const { user } = renderApp(buildRoutes(), true, memoryRouterOptions);
+        await waitFor(() => screen.getByRole('contentinfo'));
+
+        const { button } = await openMenuAndGetButton(user, /denied users/i);
+
+        stalledFetch();
+
+        await user.click(button);
+
+        const denyListModal = screen.getByRole('dialog');
+
+        const closeModalButton = within(denyListModal).getByRole('button', { name: /close modal/i});
+
+        await user.click(closeModalButton);
+        
+        await waitFor(() => expect(denyListModal).not.toBeInTheDocument());
+    });
+
     it('Can open the deny list and fully interact with it', async () => {
         const { user } = renderApp(buildRoutes(), true, memoryRouterOptions);
         await waitFor(() => screen.getByRole('contentinfo'));

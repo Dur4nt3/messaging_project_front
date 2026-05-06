@@ -52,3 +52,22 @@ export function mockFriendRequest(
         sent,
     };
 }
+
+export function mockFriend(
+    friendshipId,
+    senderId,
+    receiverId,
+    username,
+    name,
+    sent
+) {
+    return {
+        friendshipId,
+        senderId,
+        receiverId,
+        friendshipStatus: 'ACCEPTED',
+        username,
+        name,
+        sent,
+    };
+}
