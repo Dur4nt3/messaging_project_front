@@ -10,7 +10,7 @@ import PasswordFormRow from '../../utilities/miscComponents/PasswordFormRow';
 export default function Login() {
     const { errors } = useActionData() || {};
     const navigation = useNavigation();
-    const isSubmitting = navigation.formAction === '/signup';
+    const isSubmitting = navigation.formAction === '/login';
 
     const serverError = errors?.serverError;
 
